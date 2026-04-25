@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qamaria UK Pipeline · Site Scout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);background:var(--canvas);color:var(--ink);font-feature-settings:'ss01','cv11'}
+
+/* HEADER */
+header{background:var(--ink);color:#fff;padding:32px 40px 28px;border-bottom:4px solid var(--land);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px}
+header .brand{display:flex;align-items:center;gap:18px}
+header .logo{width:48px;height:48px;background:var(--land);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--canvas);font-family:var(--serif);font-size:26px;line-height:1}
+header h1{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;letter-spacing:-0.5px}
+header .sub{color:var(--sprout);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+header .meta-info{font-size:12px;color:#a1a1aa;text-align:right}
+header .meta-info .pill-date{background:var(--land);color:#fff;padding:6px 12px;border-radius:99px;font-weight:600;letter-spacing:.5px;display:inline-block;margin-bottom:6px}
+
+/* TOOLBAR */
+.toolbar{padding:18px 40px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;position:sticky;top:0;z-index:10;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.toolbar .field{display:flex;flex-direction:column;gap:4px}
+.toolbar label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.toolbar input,.toolbar select{padding:8px 12px;border:1.5px solid #e5e7eb;border-radius:6px;font-size:14px;background:#fff;font-family:var(--sans);min-width:120px}
+.toolbar input:focus,.toolbar select:focus{outline:none;border-color:var(--land)}
+
+/* STATS */
+.stats{padding:18px 40px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;gap:32px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat strong{font-size:28px;font-family:var(--serif);font-weight:400;line-height:1;color:var(--ink)}
+.stat span{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.stat.escalate strong{color:var(--esc)}
+.stat.active strong{color:var(--act)}
+
+/* GRID */
+main{padding:32px 40px;max-width:1800px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px}
+
+/* CARD */
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:transform .15s,box-shadow .15s,border-color .15s;cursor:pointer}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.10);border-color:var(--sprout)}
+.thumb{width:100%;height:180px;object-fit:cover;background:linear-gradient(135deg,var(--sprout),var(--land));display:block}
+.thumb-placeholder{width:100%;height:180px;background:linear-gradient(135deg,var(--sprout),var(--land));display:flex;align-items:center;justify-content:center;color:var(--canvas);font-family:var(--serif);font-size:24px;letter-spacing:1px}
+.card-body{padding:20px;position:relative}
+.score{position:absolute;top:-22px;right:18px;background:var(--ink);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;font-weight:700;font-size:18px;font-family:var(--mono);box-shadow:0 4px 12px rgba(0,0,0,.15);border:3px solid #fff}
+.score span{font-size:9px;font-weight:400;opacity:.7;letter-spacing:.5px;margin-top:-2px}
+.score-esc{background:var(--esc)}.score-act{background:var(--act)}
+.score-watch{background:var(--watch);color:var(--ink)}.score-rej{background:var(--rej)}
+.addr{font-weight:600;font-size:15px;line-height:1.4;margin-right:60px;margin-bottom:14px;color:var(--ink)}
+
+/* FIVE-FACTOR BARS */
+.factors{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px;padding:12px;background:var(--canvas);border-radius:8px}
+.factor{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:help}
+.fname{font-family:var(--mono);font-weight:600;font-size:11px;color:var(--soil);letter-spacing:.5px}
+.fbar{width:100%;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden}
+.fbar > span{display:block;height:100%;border-radius:2px;background:var(--weak);transition:width .3s}
+.factor.f-good .fbar > span{background:var(--good)}
+.factor.f-ok .fbar > span{background:var(--ok)}
+.factor.f-weak .fbar > span{background:var(--weak)}
+
+/* PILLS */
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pill{font-size:11px;padding:4px 10px;background:var(--canvas);border-radius:99px;color:var(--ink);font-weight:500;border:1px solid transparent}
+.pill-tier{background:var(--land);color:#fff;font-weight:600}
+.pill-fmt{background:var(--soil);color:#fff}
+.pill-muslim{background:#dcfce7;color:var(--land);font-weight:600;border-color:var(--sprout)}
+.pill-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+/* CARD FOOTER */
+.card-footer{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed #e5e7eb;font-size:11px}
+.platform-badge{background:var(--ink);color:var(--canvas);padding:3px 8px;border-radius:4px;font-family:var(--mono);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.ref{color:#9ca3af;font-family:var(--mono);flex-grow:1}
+.src-link{color:var(--land);text-decoration:none;font-weight:600}
+.src-link:hover{text-decoration:underline}
+
+/* LEGEND */
+.legend{padding:8px 40px;background:#fff;border-top:1px solid #e5e7eb;display:flex;gap:20px;font-size:11px;color:#6b7280;flex-wrap:wrap;align-items:center}
+.legend strong{color:var(--ink);text-transform:uppercase;letter-spacing:.5px}
+.legend-item{display:inline-flex;align-items:center;gap:6px}
+
+/* FOOTER */
+footer{padding:32px 40px;color:#9ca3af;font-size:11px;text-align:center;border-top:1px solid #e5e7eb;background:#fff;letter-spacing:.5px}
+footer .doctrine{color:var(--soil);font-style:italic}
+
+@media (max-width:640px){
+  header{padding:20px}
+  main{padding:20px}
+  .toolbar,.stats{padding:16px 20px;gap:12px}
+}
+</style>
+</head><body>
+
+<header>
+  <div class="brand">
+    <div class="logo">Q</div>
+    <div>
+      <h1>Qamaria UK Pipeline</h1>
+      <div class="sub">SITE SCOUT · DISCOVER COFFEE'S ORIGIN</div>
+    </div>
+  </div>
+  <div class="meta-info">
+    <div class="pill-date">2026-04-25</div>
+    <div>23 candidates tracked · 4 priority cities</div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="field"><label>Search</label>
+    <input id="q" placeholder="address, postcode, ref">
+  </div>
+  <div class="field"><label>City</label>
+    <select id="city"><option value="">All cities</option><option value='Birmingham'>Birmingham</option><option value='Liverpool'>Liverpool</option><option value='London'>London</option><option value='Manchester'>Manchester</option><option value='Other'>Other</option></select>
+  </div>
+  <div class="field"><label>Band</label>
+    <select id="band">
+      <option value="">All bands</option>
+      <option>Escalate</option><option>Active</option>
+      <option>Watch</option><option>Reject</option>
+    </select>
+  </div>
+  <div class="field"><label>Platform</label>
+    <select id="platform"><option value="">All platforms</option><option value='Allsop Auctions'>Allsop Auctions</option><option value='Completely Retail B5'>Completely Retail B5</option><option value='Davis Coffer Lyons'>Davis Coffer Lyons</option><option value='LoopNet E18'>LoopNet E18</option><option value='LoopNet M3'>LoopNet M3</option><option value='PrimeLocation B8'>PrimeLocation B8</option><option value='PrimeLocation L17'>PrimeLocation L17</option><option value='Rightmove L1'>Rightmove L1</option><option value='Zoopla L1'>Zoopla L1</option><option value='manual'>manual</option></select>
+  </div>
+  <div class="field"><label>Min QSFI</label>
+    <input id="min" type="number" min="0" max="100" value="0" style="width:80px">
+  </div>
+  <div class="field"><label>2nd-gen only</label>
+    <select id="secondgen"><option value="">All</option><option value="1">Yes</option></select>
+  </div>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="legend">
+  <strong>Legend:</strong>
+  <span class="legend-item"><strong>V</strong> Visibility</span>
+  <span class="legend-item"><strong>T</strong> Traffic</span>
+  <span class="legend-item"><strong>P</strong> Prominence</span>
+  <span class="legend-item"><strong>A</strong> Accessibility</span>
+  <span class="legend-item"><strong>S</strong> Size match</span>
+</div>
+
+<main>
+  <div class="grid">
+    <article class='card'
+        data-city='London' data-band='Watch'
+        data-platform='manual' data-secondgen='1'
+        data-score='69' data-tier='1'>
+      <img class='thumb' src='images/sv_b4ebd7d3273f.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-watch'>69<span>/100</span></div>
+        <div class='addr'>Whitechapel Road, London E1 (double-fronted restaurant unit)</div>
+        <div class='factors'><div class='factor f-good' title='Visibility: 75/100'><span class='fname'>V</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 85/100'><span class='fname'>P</span><span class='fbar'><span style='width:85%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>E1 1DN</span><span class='pill pill-fmt'>Flagship</span><span class='pill'>2,200 sqft</span><span class='pill'>£140,000/yr</span><span class='pill pill-muslim'>🕌 40%</span><span class='pill pill-second'>♻ former restaurant (recently refurbished)</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-001</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/london/whitechapel-road/e1-1dn/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Watch'
+        data-platform='manual' data-secondgen='1'
+        data-score='63' data-tier='1'>
+      <img class='thumb' src='images/sv_ac28b9e8c7ad.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-watch'>63<span>/100</span></div>
+        <div class='addr'>Queensway, Bayswater, London W2 (A3 fitted, ground+basement)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 45/100'><span class='fname'>V</span><span class='fbar'><span style='width:45%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 85/100'><span class='fname'>P</span><span class='fbar'><span style='width:85%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>W2 4QH</span><span class='pill pill-fmt'>Flagship</span><span class='pill'>2,222 sqft</span><span class='pill'>£147,500/yr</span><span class='pill pill-muslim'>🕌 20%</span><span class='pill pill-second'>♻ A3 building, fully fitted with fixtures </span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-009</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/london/queensway/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Watch'
+        data-platform='manual' data-secondgen='1'
+        data-score='61' data-tier='1'>
+      <img class='thumb' src='images/sv_8bc32444a213.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-watch'>61<span>/100</span></div>
+        <div class='addr'>Canary Wharf, London E14 (fully-fitted former restaurant)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 45/100'><span class='fname'>V</span><span class='fbar'><span style='width:45%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 85/100'><span class='fname'>P</span><span class='fbar'><span style='width:85%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>E14 5AB</span><span class='pill pill-fmt'>Flagship</span><span class='pill'>2,400 sqft</span><span class='pill pill-muslim'>🕌 40%</span><span class='pill pill-second'>♻ fully-fitted former restaurant</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-014</span>
+          <a class='src-link' href='https://search.savills.com/list/commercial/property-to-let/retail/england/london/canary-wharf/e14' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Watch'
+        data-platform='manual' data-secondgen='1'
+        data-score='60' data-tier='1'>
+      <img class='thumb' src='images/sv_965cc32d34ba.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-watch'>60<span>/100</span></div>
+        <div class='addr'>Hoe Street, Walthamstow, London E17 (Restaurant/Takeaway)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>E17 4PB</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>950 sqft</span><span class='pill'>£33,000/yr</span><span class='pill pill-muslim'>🕌 22%</span><span class='pill pill-second'>♻ former restaurant/takeaway (fitted)</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-011</span>
+          <a class='src-link' href='https://www.rightmove.co.uk/commercial-property-to-let/Walthamstow.html' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Manchester' data-band='Watch'
+        data-platform='LoopNet M3' data-secondgen='0'
+        data-score='60' data-tier='1'>
+      <img class='thumb' src='images/sv_20e5bafa3a27.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-watch'>60<span>/100</span></div>
+        <div class='addr'>No.1 Spinningfields Square, Manchester M3 (Unit A5, ground floor)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Manchester</span><span class='pill'>M3 3AP</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,500 sqft</span><span class='pill'>£40,000/yr</span><span class='pill pill-muslim'>🕌 22%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>LoopNet M3</span>
+          <span class='ref'>QS-20260425-018</span>
+          <a class='src-link' href='https://www.loopnet.co.uk/Listing/1-Spinningfields-Sq-Manchester/27041886/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Manchester' data-band='Reject'
+        data-platform='manual' data-secondgen='0'
+        data-score='58' data-tier='1'>
+      <img class='thumb' src='images/sv_87fa787b2010.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>58<span>/100</span></div>
+        <div class='addr'>Wilmslow Road, Rusholme, Manchester M14 (Curry Mile multi-floor unit)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Manchester</span><span class='pill'>M14 5RZ</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,412 sqft</span><span class='pill'>£50,000/yr</span><span class='pill pill-muslim'>🕌 22%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-003</span>
+          <a class='src-link' href='https://www.zoopla.co.uk/to-rent/commercial/details/69686207/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='1'
+        data-score='57' data-tier='1'>
+      <img class='thumb' src='images/sv_ad8b526ef548.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>57<span>/100</span></div>
+        <div class='addr'>Unit Six Cafe, Stratford Mall, Stratford Shopping Centre, London E15</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>E15 1XQ</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,500 sqft</span><span class='pill'>£117,000/yr</span><span class='pill pill-muslim'>🕌 35%</span><span class='pill pill-second'>♻ former café (fully fitted: deli counter,</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-006</span>
+          <a class='src-link' href='https://dobbinandsullivan.com/property/unit-six-cafe-stratford-mall-stratford-shopping-centre-stratford/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='1'
+        data-score='57' data-tier='1'>
+      <img class='thumb' src='images/sv_cbe89fd6523c.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>57<span>/100</span></div>
+        <div class='addr'>Green Lanes, Harringay, London N4 (former Turkish restaurant)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-ok' title='Prominence: 60/100'><span class='fname'>P</span><span class='fbar'><span style='width:60%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>N4 1DX</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,400 sqft</span><span class='pill'>£26,000/yr</span><span class='pill pill-muslim'>🕌 13%</span><span class='pill pill-second'>♻ former Turkish restaurant (very good con</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-010</span>
+          <a class='src-link' href='https://www.zoopla.co.uk/to-rent/commercial/property/london/green-lanes-n4/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Other' data-band='Reject'
+        data-platform='manual' data-secondgen='0'
+        data-score='57' data-tier='—'>
+      <img class='thumb' src='images/sv_1731d061e0fe.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>57<span>/100</span></div>
+        <div class='addr'>Romilly Street, Soho, London W1 (Class E ground+basement)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-weak' title='Prominence: 40/100'><span class='fname'>P</span><span class='fbar'><span style='width:40%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier —</span><span class='pill'>Other</span><span class='pill'>W1D 5AF</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,800 sqft</span><span class='pill pill-muslim'>🕌 20%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-013</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/soho/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Birmingham' data-band='Reject'
+        data-platform='Completely Retail B5' data-secondgen='0'
+        data-score='56' data-tier='1'>
+      <img class='thumb' src='images/sv_69d9b3c065ef.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>56<span>/100</span></div>
+        <div class='addr'>Sherlock Yard / Bullring vicinity, Birmingham B5 (mixed-use development unit)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Birmingham</span><span class='pill'>B5 4BU</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,600 sqft</span><span class='pill pill-muslim'>🕌 30%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>Completely Retail B5</span>
+          <span class='ref'>QS-20260425-020</span>
+          <a class='src-link' href='https://completelyretail.co.uk/scheme/the-bullring-estate-birmingham-3794' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='0'
+        data-score='55' data-tier='1'>
+      <img class='thumb' src='images/sv_643901c185cb.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>55<span>/100</span></div>
+        <div class='addr'>3 Brill Place, Kings Cross, London NW1 (ground floor café/leisure)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>NW1 1DX</span><span class='pill pill-fmt'>Transit</span><span class='pill'>630 sqft</span><span class='pill pill-muslim'>🕌 16%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-012</span>
+          <a class='src-link' href='https://www.levyrealestate.co.uk/property/3-brill-place-kings-cross-london-nw1-1dx-ground-floor-cafe-leisure-opportunity-630-sq-ft' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Other' data-band='Reject'
+        data-platform='Allsop Auctions' data-secondgen='0'
+        data-score='54' data-tier='—'>
+      <img class='thumb' src='images/sv_26f545067568.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>54<span>/100</span></div>
+        <div class='addr'>Battersea, London SW8 (mid-terrace ground floor restaurant via Allsop auction)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-weak' title='Prominence: 25/100'><span class='fname'>P</span><span class='fbar'><span style='width:25%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier —</span><span class='pill'>Other</span><span class='pill'>SW8 4AB</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>860 sqft</span><span class='pill'>£27,500/yr</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>Allsop Auctions</span>
+          <span class='ref'>QS-20260425-023</span>
+          <a class='src-link' href='https://www.allsop.co.uk/auctions/commercial-auctions/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Birmingham' data-band='Reject'
+        data-platform='manual' data-secondgen='0'
+        data-score='52' data-tier='1'>
+      <img class='thumb' src='images/sv_40798929e61b.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>52<span>/100</span></div>
+        <div class='addr'>Walford Road / Stratford Road area, Sparkbrook, Birmingham B11</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Birmingham</span><span class='pill'>B11 1RD</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>900 sqft</span><span class='pill'>£12,000/yr</span><span class='pill pill-muslim'>🕌 30%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-004</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/sparkbrook/sydenham-road/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='1'
+        data-score='51' data-tier='1'>
+      <img class='thumb' src='images/sv_34c404fe6454.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>51<span>/100</span></div>
+        <div class='addr'>Edgware Road, Paddington, London W2 (fitted restaurant)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>W2 1ED</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,705 sqft</span><span class='pill pill-muslim'>🕌 20%</span><span class='pill pill-second'>♻ fully fitted restaurant</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-002</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/london/edgware-road-w2/w2-1ed/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Birmingham' data-band='Reject'
+        data-platform='PrimeLocation B8' data-secondgen='0'
+        data-score='51' data-tier='1'>
+      <img class='thumb' src='images/sv_183eab47a2a8.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>51<span>/100</span></div>
+        <div class='addr'>Alum Rock Road, Birmingham B8 (2,325 sqft brand-new unit, blank canvas)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 45/100'><span class='fname'>V</span><span class='fbar'><span style='width:45%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 85/100'><span class='fname'>P</span><span class='fbar'><span style='width:85%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Birmingham</span><span class='pill'>B8 1JL</span><span class='pill pill-fmt'>Flagship</span><span class='pill'>2,325 sqft</span><span class='pill pill-muslim'>🕌 30%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>PrimeLocation B8</span>
+          <span class='ref'>QS-20260425-019</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/alum-rock/alum-rock-road/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='LoopNet E18' data-secondgen='0'
+        data-score='44' data-tier='1'>
+      <img class='thumb' src='images/sv_89aa1dcfbdc3.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>44<span>/100</span></div>
+        <div class='addr'>190-192 George Lane, South Woodford, London E18</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 45/100'><span class='fname'>V</span><span class='fbar'><span style='width:45%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 85/100'><span class='fname'>P</span><span class='fbar'><span style='width:85%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>E18 1AY</span><span class='pill pill-fmt'>Flagship</span><span class='pill'>3,250 sqft</span><span class='pill pill-muslim'>🕌 31%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>LoopNet E18</span>
+          <span class='ref'>QS-20260425-021</span>
+          <a class='src-link' href='https://www.loopnet.co.uk/Listing/190-192-George-Ln-London/31326842/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Other' data-band='Reject'
+        data-platform='Davis Coffer Lyons' data-secondgen='0'
+        data-score='42' data-tier='—'>
+      <img class='thumb' src='images/sv_68cbd7b344cd.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>42<span>/100</span></div>
+        <div class='addr'>NW London Park Cafés via DCL — Hampstead Heath / Highgate Wood / Queen&#x27;s Park</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-weak' title='Prominence: 40/100'><span class='fname'>P</span><span class='fbar'><span style='width:40%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier —</span><span class='pill'>Other</span><span class='pill'>NW3 7JR</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,500 sqft</span><span class='pill pill-muslim'>🕌 16%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>Davis Coffer Lyons</span>
+          <span class='ref'>QS-20260425-022</span>
+          <a class='src-link' href='https://www.dcl.co.uk/property/north-west-london-park-cafes-london/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Liverpool' data-band='Reject'
+        data-platform='Rightmove L1' data-secondgen='1'
+        data-score='39' data-tier='1'>
+      <img class='thumb' src='images/sv_c36c1aa2d63b.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>39<span>/100</span></div>
+        <div class='addr'>Hope Street, Liverpool L1 (former café/restaurant, prime position)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-ok' title='Prominence: 60/100'><span class='fname'>P</span><span class='fbar'><span style='width:60%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Liverpool</span><span class='pill'>L1 9BG</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,300 sqft</span><span class='pill pill-second'>♻ former café/restaurant</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>Rightmove L1</span>
+          <span class='ref'>QS-20260425-015</span>
+          <a class='src-link' href='https://www.rightmove.co.uk/commercial-property-to-let/L1.html' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Liverpool' data-band='Reject'
+        data-platform='Zoopla L1' data-secondgen='0'
+        data-score='39' data-tier='1'>
+      <img class='thumb' src='images/sv_6fae701ef169.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>39<span>/100</span></div>
+        <div class='addr'>Bold Street (Ropewalks), Liverpool L1</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-ok' title='Prominence: 60/100'><span class='fname'>P</span><span class='fbar'><span style='width:60%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Liverpool</span><span class='pill'>L1 4DA</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,800 sqft</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>Zoopla L1</span>
+          <span class='ref'>QS-20260425-016</span>
+          <a class='src-link' href='https://www.zoopla.co.uk/to-rent/commercial/property/liverpool/bold-street/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Other' data-band='Reject'
+        data-platform='manual' data-secondgen='0'
+        data-score='38' data-tier='—'>
+      <img class='thumb' src='images/sv_4af7766ed2ca.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>38<span>/100</span></div>
+        <div class='addr'>99-101 Belgrave Road, Leicester LE4 6AS</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-weak' title='Prominence: 40/100'><span class='fname'>P</span><span class='fbar'><span style='width:40%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier —</span><span class='pill'>Other</span><span class='pill'>LE4 6AS</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,800 sqft</span><span class='pill pill-muslim'>🕌 23%</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-007</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/leicester/belgrave-road/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='1'
+        data-score='37' data-tier='1'>
+      <img class='thumb' src='images/sv_29235de63cb0.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>37<span>/100</span></div>
+        <div class='addr'>Wembley Place, Wembley HA9 (former Costa unit being split)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-good' title='Prominence: 75/100'><span class='fname'>P</span><span class='fbar'><span style='width:75%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>HA9 0WS</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,200 sqft</span><span class='pill pill-muslim'>🕌 21%</span><span class='pill pill-second'>♻ former Costa Coffee (vacated, glazed fro</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-008</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/wembley/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='London' data-band='Reject'
+        data-platform='manual' data-secondgen='1'
+        data-score='34' data-tier='1'>
+      <img class='thumb' src='images/sv_8ec58d859e1b.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>34<span>/100</span></div>
+        <div class='addr'>Tooting High Street, London SW17 (Class E café/bistro, fitted)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-ok' title='Prominence: 60/100'><span class='fname'>P</span><span class='fbar'><span style='width:60%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>London</span><span class='pill'>SW17 0RG</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,100 sqft</span><span class='pill pill-second'>♻ former café/bistro (refurbished, fitted)</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>manual</span>
+          <span class='ref'>QS-20260425-005</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/london/tooting-high-street/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    
+    <article class='card'
+        data-city='Liverpool' data-band='Reject'
+        data-platform='PrimeLocation L17' data-secondgen='0'
+        data-score='32' data-tier='1'>
+      <img class='thumb' src='images/sv_5709277d4299.jpg' loading='lazy' alt=''>
+      <div class='card-body'>
+        <div class='score score-rej'>32<span>/100</span></div>
+        <div class='addr'>Lark Lane, Aigburth, Liverpool L17 (independent shopping strip)</div>
+        <div class='factors'><div class='factor f-weak' title='Visibility: 30/100'><span class='fname'>V</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-weak' title='Traffic: 15/100'><span class='fname'>T</span><span class='fbar'><span style='width:15%'></span></span></div><div class='factor f-ok' title='Prominence: 60/100'><span class='fname'>P</span><span class='fbar'><span style='width:60%'></span></span></div><div class='factor f-weak' title='Accessibility: 30/100'><span class='fname'>A</span><span class='fbar'><span style='width:30%'></span></span></div><div class='factor f-good' title='Size: 95/100'><span class='fname'>S</span><span class='fbar'><span style='width:95%'></span></span></div></div>
+        <div class='meta'><span class='pill pill-tier'>Tier 1</span><span class='pill'>Liverpool</span><span class='pill'>L17 8UU</span><span class='pill pill-fmt'>Satellite</span><span class='pill'>1,100 sqft</span></div>
+        <div class='card-footer'>
+          <span class='platform-badge'>PrimeLocation L17</span>
+          <span class='ref'>QS-20260425-017</span>
+          <a class='src-link' href='https://www.primelocation.com/to-rent/commercial/property/aigburth/lark-lane/' target='_blank' rel='noopener'>open listing →</a>
+        </div>
+      </div>
+    </article>
+    </div>
+</main>
+
+<footer>
+  <div class="doctrine">"Surface high-potential UK retail sites at least 30 days before they become publicly competitive."</div>
+  <div style="margin-top:8px">Generated 2026-04-25 · Doctrine v1 · QSFI ≥60 = Watch · ≥75 = Active · ≥90 = Escalate</div>
+</footer>
+
+<script>
+const cards = [...document.querySelectorAll('.card')];
+function applyFilter() {
+  const q = document.getElementById('q').value.toLowerCase();
+  const city = document.getElementById('city').value;
+  const band = document.getElementById('band').value;
+  const platform = document.getElementById('platform').value;
+  const min = parseInt(document.getElementById('min').value || 0, 10);
+  const sg = document.getElementById('secondgen').value;
+  let shown=0, esc=0, act=0, watch=0, totalScore=0;
+  cards.forEach(c => {
+    const text = c.textContent.toLowerCase();
+    const score = parseInt(c.dataset.score || 0, 10);
+    const ok = (!q || text.includes(q)) &&
+               (!city || c.dataset.city === city) &&
+               (!band || c.dataset.band === band) &&
+               (!platform || c.dataset.platform === platform) &&
+               (!sg || c.dataset.secondgen === sg) &&
+               (score >= min);
+    c.style.display = ok ? '' : 'none';
+    if (ok) { shown++; totalScore += score;
+      if (c.dataset.band==='Escalate') esc++;
+      if (c.dataset.band==='Active') act++;
+      if (c.dataset.band==='Watch') watch++; }
+  });
+  document.getElementById('stats').innerHTML =
+    '<div class="stat"><strong>'+shown+'</strong><span>visible</span></div>' +
+    '<div class="stat escalate"><strong>'+esc+'</strong><span>escalate</span></div>' +
+    '<div class="stat active"><strong>'+act+'</strong><span>active</span></div>' +
+    '<div class="stat"><strong>'+watch+'</strong><span>watch</span></div>' +
+    '<div class="stat"><strong>'+(shown ? Math.round(totalScore/shown) : 0)+'</strong><span>avg QSFI</span></div>';
+}
+['q','city','band','platform','min','secondgen'].forEach(id =>
+  document.getElementById(id).addEventListener('input', applyFilter));
+applyFilter();
+</script>
+</body></html>
