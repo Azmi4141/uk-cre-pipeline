@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>165 Francis Road, Leyton, London E10 6NT (ground-floor retail unit of 710 sqft on Francis Road in Leyton Village — a partly-pedestrianised independent food + bakery + wine-bar parade between Albert Road and Murchison Road — currently trading as Chris&#x27;s Fish Bar quick-service takeaway; nearest underground station Leyton on the Central Line within 5 minutes walking distance + Leyton Midland Road Overground within 5 minutes walking distance; via Claridges Commercial / LoopNet 32332261) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <img class='hero-img' src='../images/sv_4eb7eb97bd70.jpg' alt=''>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>165 Francis Road, Leyton, London E10 6NT (ground-floor retail unit of 710 sqft on Francis Road in Leyton Village — a partly-pedestrianised independent food + bakery + wine-bar parade between Albert Road and Murchison Road — currently trading as Chris&#x27;s Fish Bar quick-service takeaway; nearest underground station Leyton on the Central Line within 5 minutes walking distance + Leyton Midland Road Overground within 5 minutes walking distance; via Claridges Commercial / LoopNet 32332261)</h1>
+    <div class="meta-line">
+      <span>E10 6NT</span><span>·</span><span>Tier — · Other</span>
+      <span>·</span><span>Transit</span><span>·</span><span>Reject</span>
+    </div>
+  </div>
+  <div class="hero-score score-rej"><strong>53</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier —</span>
+    <span class="tag tag-fmt">Transit</span>
+    <span class='tag tag-muslim'>🕌 22% Muslim</span>
+    <span class='tag tag-second'>♻ currently trading as Chris&#x27;s Fish Bar quick-service food takeaway — fitted hospitality envelope (extraction + commercial kitchen + serve-counter + back-of-house all in place from existing fish-and-chip operator) likely saves c.£100-180k Cat-B vs. shell hand-over for hospitality conversion; Class E sub-use confirmation required for sit-down hospitality covenant</span>
+    <span class='tag'>710 sqft</span>
+    <span class='tag'>£32,000/yr</span>
+    <span class="tag">via LoopNet E10 6NT</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> 165 Francis Road E10 6NT is the standout brand-fit pitch in the E10 batch — 710 sqft GF retail directly on Francis Road, Leyton&#x27;s emergent partly-pedestrianised independent food + bakery + wine-bar parade between Albert Road and Murchison Road. Francis Road has organically clustered Yardarm (deli + wine bar with garden), Deeney&#x27;s (Scots-couple-founded Leyton institution since 2012), Phlox, Zaxx, Loop Dining (216b Francis Road), Marmelo, CCP Home Kitchen (191 Francis Road), Pause, ArtWorks East (gallery + artisan coffee + bar) — the structural analog of Hackney&#x27;s Chatsworth Road specialty parade or Stoke Newington Church Street, but at c.£40-50 PSF ITZA vs. the Hackney £55-65 PSF benchmark. The 710 sqft unit currently houses Chris&#x27;s Fish Bar — fitted hospitality envelope (extraction + commercial kitchen + back-of-house all already in place from the existing fish-and-chip operator) saves c.£100-180k Cat-B conversion vs. shell hand-over. Class E should subsume the existing A3 / A5 lineage. Leyton tube (Central Line, c.6m entries/exits per year) + Leyton Midland Road Overground (Gospel Oak-Barking line) both within 5 minutes walk give multimodal commuter + residential-dwell catchment overlap. Waltham Forest c.21% Muslim borough share + Grove Green / Leyton ward c.20-22% supports the £4-6 specialty pricepoint with Yemeni heritage + family-friendly + alcohol-free format structurally differentiated from the Italian / European / Australian operator profile dominant on Francis Road. Claridges Commercial is multi-instruction across Francis Road + Leyton + the wider East London corridor — DOCTRINE §7.6 relationship-building leverage.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>30</div><div class='factor-bar'><span style='width:30%'></span></div></div><div class='factor-cell f-ok'><div class='factor-label'>Traffic</div><div class='factor-value'>60</div><div class='factor-bar'><span style='width:60%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Prominence</div><div class='factor-value'>40</div><div class='factor-bar'><span style='width:40%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>21.6%</td></tr><tr><th>District population</th><td>278,426</td></tr><tr><th>Daily footfall (est.)</th><td>18,000</td></tr><tr><th>Daytime workers</th><td>35,000</td></tr><tr><th>Student catchment</th><td>9,000</td></tr><tr><th>Median HH income</th><td>£45,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Waltham Forest</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Yardarm Francis Road (~50m); Deeney&#x27;s Francis Road (~80m); Phlox Francis Road (~100m); Marmelo Francis Road (~120m); Loop Dining 216b Francis Road (~200m); Pause Francis Road (~150m); CCP Home Kitchen 191 Francis Road (~160m); ArtWorks East Osier Way (~600m east); Pavilion Bakery Victoria Park (~2.0km southwest); E5 Bakehouse Mentmore Terrace (~1.6km west); Pret a Manger Bakers Arms (~1.5km north) (50m)</p><p>Francis Road is the highest-density indie-F&amp;B + specialty-bakery + wine-bar cluster in E10 — Yardarm + Deeney&#x27;s + Phlox + Marmelo + Loop Dining + CCP + Pause + ArtWorks all within 600m. Brand-overlap competitive density is high but specialty-coffee operator profile is European / NZ / Aussie / French rather than Yemeni heritage — clean differentiation positioning. Pret + Costa + chain density sits 1.5km north at Bakers Arms / Walthamstow giving Francis Road a sheltered indie character well-aligned to the BRAND.md hospitality-led &#x27;almost-like-a-restaurant&#x27; format.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>710 sqft GIA is at the upper end of DOCTRINE §3 Transit (400-900 sqft) / lower end of Satellite (800-1,800 sqft) — cover capacity peaks c.25-40 with counter + bench + couple of small tables + outdoor seating; the BRAND.md &#x27;almost-like-a-restaurant&#x27; depth is achievable at the lower-Satellite scale but not the Flagship-grade hospitality format.</li><li>Chris&#x27;s Fish Bar is currently trading — covenant + assignment vs. landlord-direct vs. operator distress context not flagged in the LoopNet / Claridges headline; premium structure + outgoing operator F&amp;F inventory + landlord schedule of dilapidations all require pre-LOI verification.</li><li>Headline rent + service charge + rates + RV + lease term + EPC + landlord covenant all undisclosed in the LoopNet / Claridges headline — full pack required pre-LOI; £32,000 pa scout-rough-cut at £45 PSF GIA is a Hackney-corridor benchmark that may over- or under-shoot true Francis Road ITZA.</li><li>Class E sub-use confirmation required — A5 hot-food takeaway (Chris&#x27;s Fish Bar) precedent should support sit-down hospitality consent under the post-2020 reform but written landlord confirmation needed pre-LOI; some leases retain pre-2020 use class restrictions in the alienation clauses.</li><li>Francis Road footfall is partly-pedestrianised destination-dwell rather than commuter-throughput — format depends on weekend brunch + weekday work-from-home dwell + indie-F&amp;B co-tenant priming rather than commuter pedestrian flow.</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>Email Claridges Commercial (c/o the Francis Road E10 listing + LoopNet 32332261 cross-reference) within 48h to request (a) full marketing pack with exact GIA + frontage width on Francis Road + ceiling height + EPC + use class confirmation + Chris&#x27;s Fish Bar covenant context (assignment vs. landlord-direct vs. distress); (b) headline rent + service charge + rates + RV + lease term + landlord covenant + premium (if assignment); (c) Class E sub-use + extraction routing + back-of-house layout for Yemeni-heritage hospitality conversion; (d) Claridges Commercial wider Francis Road + Leyton instruction pipeline (Claridges hold multiple Leyton + East London instructions per the cross-search). Walk Francis Road end-to-end Sat 10:00-15:00 + Sun 11:00-15:00 + Mon-Fri 09:00-11:00 + 12:00-14:00 + 17:00-19:00 to score parade-dwell footfall + benchmark Yardarm + Deeney&#x27;s + Phlox + Loop Dining cover-utilisation as direct catchment-validation comparable. **High priority — likely top-Watch / lower-Active band given the indie-parade brand-fit + fitted-envelope capex saving + multimodal transit-adjacent profile.**</p>
+      </div>
+      <a class='btn-primary' href='https://www.loopnet.co.uk/listing/165-francis-rd-london/32332261/' target='_blank' rel='noopener'>Open listing →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260426-026 · Generated 2026-04-26</div>
+</footer>
+
+</body></html>
