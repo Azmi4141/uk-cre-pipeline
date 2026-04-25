@@ -22,6 +22,11 @@
   font-weight: 700; font-style: normal; font-display: swap;
 }
 :root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
   --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
   --canvas:#F1F2F2; --ink:#282828;
   --land-soft:#dcfce7;
@@ -92,11 +97,19 @@ header.detail-hero{position:relative;height:340px;overflow:hidden;background:var
 footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
 
 @media(max-width:720px){
-  .hero-overlay h1{font-size:28px}
-  .hero-score{width:72px;height:72px;font-size:28px;top:16px;right:20px}
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
   .container{padding:28px 20px}
   .factor-grid{grid-template-columns:repeat(2,1fr)}
-  .action-card{flex-direction:column;align-items:flex-start}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
 }
 </style>
 </head><body>

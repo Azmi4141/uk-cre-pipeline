@@ -23,6 +23,11 @@
   font-weight: 700; font-style: normal; font-display: swap;
 }
 :root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
   --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
   --canvas:#F1F2F2; --ink:#282828;
   --land-soft:#dcfce7;
@@ -106,6 +111,14 @@ footer .doctrine{color:var(--soil);font-style:italic;font-family:var(--serif);fo
   header{padding:24px}
   main{padding:24px}
   .toolbar,.stats,.legend{padding:16px 24px;gap:14px}
+  .grid{grid-template-columns:1fr}
+  .toolbar input,.toolbar select{min-height:44px;padding:11px 13px;min-width:0;width:100%}
+  .toolbar .field{flex:1 1 140px}
+  header .row{align-items:flex-start}
+  header .meta-info{text-align:left}
+  header h1{font-size:26px}
+  .score{width:52px;height:52px;font-size:17px;top:-22px;right:16px}
+  .addr{margin-right:55px;font-size:14px}
 }
 </style>
 </head><body>
