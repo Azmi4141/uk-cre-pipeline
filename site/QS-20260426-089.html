@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>St John&#x27;s Hill (corner with Harbut Road), Clapham Junction, London SW11 1TT (Class A3/E corner-position restaurant/bar unit arranged over ground floor + basement on the north side of St John&#x27;s Hill at corner with Harbut Road, on the busy A3036 route between Clapham Junction and Wandsworth, established interior + lifestyle retail + bars + restaurants + cafés social destination, c.0.3 miles to Clapham Junction Station; via Bells Chartered Surveyors / Bells Commercial) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <img class='hero-img' src='../images/sv_3203ad62fcd8.jpg' alt=''>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>St John&#x27;s Hill (corner with Harbut Road), Clapham Junction, London SW11 1TT (Class A3/E corner-position restaurant/bar unit arranged over ground floor + basement on the north side of St John&#x27;s Hill at corner with Harbut Road, on the busy A3036 route between Clapham Junction and Wandsworth, established interior + lifestyle retail + bars + restaurants + cafés social destination, c.0.3 miles to Clapham Junction Station; via Bells Chartered Surveyors / Bells Commercial)</h1>
+    <div class="meta-line">
+      <span>SW11 1TT</span><span>·</span><span>Tier — · Other</span>
+      <span>·</span><span>Satellite</span><span>·</span><span>Reject</span>
+    </div>
+  </div>
+  <div class="hero-score score-rej"><strong>50</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier —</span>
+    <span class="tag tag-fmt">Satellite</span>
+    
+    <span class='tag tag-second'>♻ corner-position Class A3/E ground+basement restaurant/bar envelope with retained customer envelope + serviced infrastructure on St John&#x27;s Hill A3036 corner with Harbut Road — landlord-handover spec implied as Cat-A or fitted-previous-restaurant awaiting Bells Commercial brochure-pack confirmation; allow c.£120-200k Cat-B Satellite-scale brand-overlay (kitchen + extraction routing GF or basement + servery + Allaina-serif + qamariya stained-glass corner-shopfront treatment + 1,800 sqft GF+basement seating zones + Yemeni-traditional-brew theatre + dallah-pour bar + family-friendly lounge + Wandsworth Council outdoor-seating application + Clapham Junction transit-walk-up positioning) vs. £230-340k full Cat-B from shell — Cat-A landlord-spec + corner-position is structural £80-130k Cat-B saving + 4-8 week opening acceleration; corner-position Harbut Road junction frontage is structural £60-100k seating-capacity + visibility + dual-aspect-pavement-seating premium</span>
+    <span class='tag'>1,800 sqft</span>
+    
+    <span class="tag">via Bells Commercial St John&#x27;s Hill</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> St John&#x27;s Hill SW11 1TT is the strongest corner-position dual-floor Satellite pitch in the SW11 batch — c.1,800 sqft Class A3/E ground+basement restaurant/bar at the corner of St John&#x27;s Hill and Harbut Road on the established A3036 social-destination corridor between Clapham Junction and Wandsworth via Bells Chartered Surveyors / Bells Commercial (cross-tick relationship with 495 Battersea Park Rd LoopNet 31606377 Bells listing — landlord-side bilateral pipeline). St John&#x27;s Hill carries c.20-32k weekday + 30-42k weekend pedestrian footfall per Wandsworth BID 2024-25 + Clapham Junction transit-walk-up (0.3 miles, c.30m+ annual passenger entries+exits per ORR 2024-25 — busiest UK rail interchange by trains-per-day) + Wandsworth Common adjacency + Northcote Road parade overspill (0.5 miles). Corner-position with Harbut Road = structural visibility + dual-aspect-pavement-seating premium vs. mid-parade comparables. Brand Fit qualifier: SW11 1TT sits within Latchmere/Falconbrook ward density c.6-9% Muslim per ONS 2021 + young-professional + Clapham Junction commuter daypart + Wandsworth borough 9.9% trajectory = mid-range catchment density (above Northcote ward 1-3% but below Tower Hamlets Bethnal Green 39.9%). Format-scale fit: c.1,800 sqft estimated GIA sits at upper-Satellite band (800-1,800 sqft) + GF+basement = appropriate dual-floor configuration; corner-position adds visibility-premium not present on mid-parade Northcote Road comparables.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-ok'><div class='factor-label'>Visibility</div><div class='factor-value'>60</div><div class='factor-bar'><span style='width:60%'></span></div></div><div class='factor-cell f-ok'><div class='factor-label'>Traffic</div><div class='factor-value'>60</div><div class='factor-bar'><span style='width:60%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Prominence</div><div class='factor-value'>25</div><div class='factor-bar'><span style='width:25%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>9.9%</td></tr><tr><th>District population</th><td>327,506</td></tr><tr><th>Daily footfall (est.)</th><td>26,000</td></tr><tr><th>Daytime workers</th><td>35,000</td></tr><tr><th>Student catchment</th><td>9,000</td></tr><tr><th>Median HH income</th><td>£82,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Wandsworth</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Caffè Nero Clapham Junction (~300m, chain coffee); Pret A Manger Clapham Junction (~350m, chain coffee); Costa Clapham Junction (~400m, chain coffee); Starbucks Clapham Junction (~400m, chain coffee); Joe &amp; The Juice Northcote Road (~500m, premium chain juice+coffee); Gail&#x27;s Northcote Road (~600m, premium chain bakery+coffee); All Bar One Clapham Junction (~350m, chain bar+casual-dining); Wagamama Clapham Junction (~400m, chain Asian); Whole Foods Clapham Junction (~500m, premium-grocery family-anchor); No direct premium-specialty Yemeni / Middle Eastern coffee operator inside SW11 1 postcode (300m)</p><p>St John&#x27;s Hill A3036 corner has chain-coffee saturated layer at Clapham Junction Station 300-400m (Caffè Nero + Pret + Costa + Starbucks + All Bar One + Wagamama) at £3-6 pricepoint + Northcote Road premium-parade at 500-600m (Joe &amp; The Juice + Gail&#x27;s) + Whole Foods premium-grocery family-anchor 500m — meaningful Yemeni-heritage specialty whitespace at the £4-7 pricepoint with corner-position + Clapham Junction transit walk-up + dual-floor GF+basement Flagship-of-Satellite-scale; corner-position + Yemeni-heritage + traditional-brew + dallah-pour + family-friendly + alcohol-free + Allaina-serif + qamariya stained-glass corner-shopfront treatment positioning is highest hospitality &gt; transaction differentiator on the St John&#x27;s Hill social-destination corridor.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>Bells Commercial marketing pack confirmation — exact GIA / NIA breakdown of GF vs. basement + frontage widths (dual-aspect corner) + ceiling height + EPC + use class confirmation (A3 Sui Generis vs. E re-designation) + landlord covenant + lease term + premium / incentives + Cat-B contribution + service charge + rates + RV + headline rent (Bells Commercial Clapham Junction listings typically £45-65 PSF ITZA = c.£81-117k pa range working assumption pending pack) all require Bells Commercial direct contact pre-LOI; size_sqft 1,800 is working estimate.</li><li>A3 designation pre-2020 reform may carry forward as Sui Generis if licensed-bar use retained — pre-LOI Class E re-designation + Wandsworth Council planning confirmation + premises-licence-transfer eligibility critical (parallel risk to E13 QS-039 Sussex Street A5 Sui Generis flag).</li><li>St John&#x27;s Hill social-destination corridor includes bars + late-night premises — Yemeni-heritage alcohol-free + family-friendly positioning may face neighbour-pattern mismatch; pre-LOI 7-day daypart + late-night-noise + alcohol-led-crowd benchmarking + Wandsworth Council Cumulative Impact Zone check critical.</li><li>GF+basement Cat-B fit-out routing (kitchen + extraction + WC + dumb-waiter + means-of-escape) requires Building Control + fire-strategy + Wandsworth Conservation Area + £15-25k structural-spec spend; basement seating-capacity Building Regulations Approved Document B compliance for c.700-900 sqft below-ground occupancy critical.</li><li>Wandsworth Council St John&#x27;s Hill outdoor-seating consent + Conservation Area precedent — corner-position dual-aspect-pavement-seating allows 2-frontage application + adds 8-16 week consent timeline + £8-15k consultancy spend; St John&#x27;s Hill pavement-seating precedent c.55-70% approval rate per 2022-2025 case-law.</li><li>Postcode SW11 1TT per St John&#x27;s Hill / Harbut Road junction central-axis cross-reference; pre-LOI exact street-number + Bells Commercial CHAR_000678 listed-agent confirmation required — Bells Commercial uses internal property-codes vs. LoopNet/Rightmove portal IDs.</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>Phone Bells Chartered Surveyors / Bells Commercial (St John&#x27;s Hill / Harbut Road corner SW11 1TT per bellssurveyors.co.uk/detail.asp?propcode=CHAR_000678 — Bells Commercial SW11 retail desk) within 48h to request (a) full marketing pack with exact GIA / NIA breakdown of GF vs. basement + dual-aspect frontage widths + ceiling height + EPC + use class confirmation (A3 Sui Generis vs. E re-designation) + landlord covenant + lease term + Cat-A or fitted-previous-restaurant spec + premises-licence-transfer eligibility; (b) headline rent + service charge + rates + RV + premium / incentives + Cat-B contribution + step-rent / turnover-rent structure + Schedule-of-Condition + Wandsworth Council Conservation Area + Cumulative Impact Zone constraints + outdoor-seating consent precedent + St John&#x27;s Hill A3036 highways / pavement-seating case-law; (c) Bells Commercial wider Clapham Junction + St John&#x27;s Hill + Battersea Rise + Northcote Road + Battersea Park Road + Lavender Hill commercial pipeline + landlord motivation level + St John&#x27;s Hill void duration + prior-restaurant vacate reason + cross-tick lever on 495 Battersea Park Rd LoopNet 31606377 Bells listing same-agent SW11 instruction. Walk St John&#x27;s Hill from Clapham Junction Station via St John&#x27;s Hill / Harbut Road corner Mon-Fri 07:00-09:00 + 12:00-14:00 + 17:00-21:00 + Sat 10:00-19:00 + Sun 11:00-18:00 + Fri/Sat 22:00-00:00 (alcohol-led late-night benchmarking) to benchmark Clapham Junction transit walk-up + Caffè Nero/Pret/Costa/Starbucks chain-coffee competitor capture + All Bar One/Wagamama casual-dining adjacency + Whole Foods premium-grocery family-anchor + Northcote Road premium-parade overspill + alcohol-led crowd-pattern vs. Yemeni-heritage opportunity-set.</p>
+      </div>
+      <a class='btn-primary' href='https://www.google.com/search?q=SW11+1TT+commercial+site%3Abellssurveyors.co.uk' target='_blank' rel='noopener'>Find SW11 1TT on Bellssurveyors →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260426-089 · Generated 2026-04-26</div>
+</footer>
+
+</body></html>
