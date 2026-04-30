@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eden Walk, Kingston upon Thames KT1 1BP (restaurant unit within £400m Eden Quarter retail-led mixed-use regeneration scheme — restaurant units arranged around central public space as the focal point of new public realm; via Avison Young / Completely Retail scheme 4035 / LoopNet 23694822) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <img class='hero-img' src='../images/sv_f86dfd3742f4.jpg' alt=''>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>Eden Walk, Kingston upon Thames KT1 1BP (restaurant unit within £400m Eden Quarter retail-led mixed-use regeneration scheme — restaurant units arranged around central public space as the focal point of new public realm; via Avison Young / Completely Retail scheme 4035 / LoopNet 23694822)</h1>
+    <div class="meta-line">
+      <span>KT1 1BP</span><span>·</span><span>Tier — · Other</span>
+      <span>·</span><span>Flagship</span><span>·</span><span>Watch</span>
+    </div>
+  </div>
+  <div class="hero-score score-watch"><strong>62</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier —</span>
+    <span class="tag tag-fmt">Flagship</span>
+    
+    <span class='tag tag-second'>♻ Class E shell-and-core or Cat-A first-fix new-build / refurbished restaurant unit within the £400m Eden Quarter regen scheme — restaurant units arranged around central public space provides scheme-curated F&amp;B clustering. Allow c.£200-340k Cat-B Flagship-band brand-overlay (kitchen + commercial extraction-flue cored to roof-vent + grease-trap + 3-phase + dual-WC + accessible-WC + servery + Allaina-serif + qamariya stained-glass full-shopfront + dallah-pour bar + 60-90 cover seating + outdoor terrace on central public space + Yemeni-traditional-brew + family-friendly + alcohol-free + RBK pavement-licence application + accessibility-compliance + EPC-A new-build floor-to-ceiling glazing) over shell base.</span>
+    <span class='tag'>2,200 sqft</span>
+    <span class='tag'>£80,000/yr</span>
+    <span class="tag">via LoopNet 23694822</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> Eden Walk KT1 1BP = £400m Eden Quarter retail-led mixed-use regeneration scheme delivering new restaurant + retail + residential at the southern end of Kingston&#x27;s Clarence Street prime pedestrianised spine — designed around a central public space with restaurant units as focal point. DOCTRINE §7.5 demographic-wave-detection signal — £400m placemaking regen creates 2026-2028 demographic uplift via new residential + improved public realm. Scheme-curated F&amp;B clustering (vs. ad-hoc high-street saturation) provides differentiated Flagship-band hospitality-led catchment context. 2,200 sqft fits DOCTRINE §3 Flagship 2,000-4,500 sqft envelope. Avison Young + McMullen Real Estate dual-leasing covers scheme. Brand Fit qualifier: RBK Muslim 6.5% caps Brand Fit pillar 4-5/10 — but Eden Quarter-scale regen + scheme-curated F&amp;B + central public space + Kingston University 16k student cohort + Kingston Station 10m commuter catchment overlay drives Watch-band ceiling possible.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>45</div><div class='factor-bar'><span style='width:45%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Traffic</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Prominence</div><div class='factor-value'>35</div><div class='factor-bar'><span style='width:35%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>8.0%</td></tr><tr><th>District population</th><td>168,065</td></tr><tr><th>Daily footfall (est.)</th><td>32,000</td></tr><tr><th>Daytime workers</th><td>32,000</td></tr><tr><th>Student catchment</th><td>16,000</td></tr><tr><th>Median HH income</th><td>£52,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Kingston upon Thames</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Costa Coffee Clarence Street (~150m); Pret a Manger Clarence Street (~200m); Caffè Nero Clarence Street (~250m); Starbucks Bentall (~250m); Gail&#x27;s Eden Walk same-scheme co-tenant (~50-100m); Black Sheep Coffee Clarence Street (~150m); Greggs Clarence Street (~200m); Bentall Centre food-court chain-tenants (~150m); No premium-specialty Yemeni / Middle-Eastern coffee operator inside KT1 (50m)</p><p>Eden Walk + Eden Quarter £400m regen + scheme-curated F&amp;B clustering + central public space + Gail&#x27;s same-scheme co-tenant validates Yemeni-heritage premium-specialty positioning within scheme&#x27;s premium-curated tenant mix. Differentiator on Yemeni-heritage + heritage-craft + Allaina-serif + dallah-pour theatre + 60-90 cover hospitality-led + outdoor terrace on central public space + scheme-anchor hospitality-led-positioning critical.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>Avison Young / McMullen Real Estate / LoopNet 23694822 / Completely Retail scheme 4035 marketing-pack confirmation required — exact GIA/NIA breakdown (2,200 sqft estimate pending direct verification — Eden Walk has multiple available units with varying sizes) + specific unit identification (Eden Walk includes Adam&#x27;s Walk parade + Eden Street frontage units + central-square restaurant units) + Class E sub-class confirmation + landlord-handover-condition (shell-and-core vs. Cat-A first-fix) + lease length + 1954-Act inclusion / exclusion + premium / non-premium + step-rent + landlord Cat-B contribution + EPC + Schedule-of-Condition + Cat-B kitchen + extraction-routing-feasibility all require Avison Young direct contact pre-LOI.</li><li>RBK Muslim 6.5% (ONS 2021) — Brand Fit pillar 4-5/10 ceiling structural; Yemeni-heritage explicit Muslim-halal positioning weak fit for Christian 39% + no-religion 41% affluent-secular suburban catchment; partial offset via Kingston University 16k student cohort + Eden Walk premium-curated tenant mix.</li><li>Eden Quarter £400m regen delivery timeline + phasing critical pre-LOI — restaurant unit availability may be subject to scheme-completion + central public space delivery timeline; pre-LOI confirmation of unit-handover date + scheme-occupancy level at handover + co-tenant confirmation list (Gail&#x27;s confirmed; full premium-tenant pre-let confirmation drives Brand Fit overlay).</li><li>Scheme-anchored Flagship-band Cat-B c.£200-340k + working-capital + Year-1 trading buffer = c.£280-440k Year-1 capital + working-capital commitment — Flagship-scale payback model + 30-42 month break-even hurdle on Tier-3 catchment requires conservative trading-density assumption + scheme-occupancy ramp sensitivity-analysis on £4-7 ATV + 220-340 daily-cover ramp over 12-18 months.</li><li>Scheme service-charge + management-fee burden typically c.£8-15 psf on top of headline rent for premium-curated regen scheme — total occupancy cost reconciliation against headline £80k pa critical pre-LOI; pre-LOI total-occupancy-cost model + ITZA Zone-A Eden Walk comparables critical.</li><li>Gail&#x27;s same-scheme co-tenant validates premium-curated positioning but creates direct premium-specialty competition — differentiator on Yemeni-heritage vs. Gail&#x27;s bakery-cafe positioning + £4-7 specialty + dallah-pour theatre + Yemeni-distinct positioning critical.</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>Phone Avison Young + McMullen Real Estate direct (per LoopNet 23694822 + Completely Retail scheme 4035) within 48h to request (a) full Eden Walk leasing pack with available-unit list + exact GIA/NIA breakdown per unit + specific unit recommendation for Yemeni-heritage hospitality-led 60-90 cover format + scheme floor-plan + central public space layout + outdoor-terrace consent precedent + Class E sub-class confirmation per unit + landlord-handover-condition (shell vs. Cat-A) + lease length + 1954-Act inclusion / exclusion + premium / non-premium + step-rent + landlord Cat-B contribution + EPC + Schedule-of-Condition + Cat-B kitchen + extraction-routing-feasibility per unit; (b) headline rent + service charge + rates + RV + scheme-management-fee + total-occupancy-cost model + ITZA Zone-A Eden Walk comparables; (c) full pre-let / occupied co-tenant list + scheme-completion timeline + central public space delivery date + occupancy phase plan + Gail&#x27;s positioning confirmation. Walk Eden Walk + Clarence Street + Bentall Mon-Fri + Sat-Sun day-and-evening to benchmark scheme footfall + central public space activation + Gail&#x27;s same-scheme co-tenant trading pattern.</p>
+      </div>
+      <a class='btn-primary' href='https://www.google.com/search?q=KT1+1BP+commercial+site%3Aloopnet.com' target='_blank' rel='noopener'>Find KT1 1BP on Loopnet →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260430-018 · Generated 2026-04-30</div>
+</footer>
+
+</body></html>
