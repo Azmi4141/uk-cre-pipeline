@@ -61,6 +61,21 @@ header.detail-hero{position:relative;height:340px;overflow:hidden;background:var
 .factor-cell.f-ok .factor-bar > span{background:var(--ok)}
 .factor-cell.f-ok .factor-value{color:var(--ok)}
 
+.qb{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:22px}
+.qb-row{display:grid;grid-template-columns:170px 1fr 80px;column-gap:14px;row-gap:4px;align-items:center}
+.qb-label{font-size:13px;font-weight:600;color:var(--soil)}
+.qb-track{height:10px;background:#eef0f0;border-radius:6px;overflow:hidden}
+.qb-fill{display:block;height:100%;background:var(--weak);border-radius:6px;transition:width .3s ease}
+.qb-row.qb-good .qb-fill{background:var(--good)}
+.qb-row.qb-ok   .qb-fill{background:var(--ok)}
+.qb-score{font-family:var(--serif);font-size:18px;color:var(--ink);text-align:right;line-height:1}
+.qb-score em{font-style:normal;font-size:12px;color:#6b7280;margin-left:2px}
+.qb-note{grid-column:2 / 4;font-size:12px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.qb-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #eef0f0;padding-top:14px;margin-top:4px}
+.qb-total-label{font-size:13px;font-weight:600;color:var(--soil);letter-spacing:.3px;text-transform:uppercase}
+.qb-total-value{font-family:var(--serif);font-size:24px;color:var(--ink)}
+.qb-total-value em{font-style:normal;font-size:14px;color:#6b7280;margin-left:4px}
+
 .kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
 .kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
 .kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
@@ -95,6 +110,11 @@ footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;backgrou
   .btn-primary{min-height:44px;display:inline-flex;align-items:center}
   .kv th,.kv td{padding:11px 14px;font-size:13px}
   .kv th{width:42%}
+  .qb{padding:16px}
+  .qb-row{grid-template-columns:120px 1fr 64px;column-gap:10px}
+  .qb-label{font-size:12px}
+  .qb-score{font-size:16px}
+  .qb-total-value{font-size:20px}
 }
 </style>
 </head><body>
@@ -130,6 +150,8 @@ footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;backgrou
     <h2>Five-Factor Read</h2>
     <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>45</div><div class='factor-bar'><span style='width:45%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Traffic</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-ok'><div class='factor-label'>Prominence</div><div class='factor-value'>70</div><div class='factor-bar'><span style='width:70%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
   </section>
+
+  <section class='section'><h2>QSFI breakdown</h2><div class='qb'><div class='qb-row qb-weak'><div class='qb-label'>Catchment Demand</div><div class='qb-track'><span class='qb-fill' style='width:32%'></span></div><div class='qb-score'>8<em>/25</em></div></div><div class='qb-row qb-ok'><div class='qb-label'>Footfall &amp; Vis.</div><div class='qb-track'><span class='qb-fill' style='width:65%'></span></div><div class='qb-score'>13<em>/20</em></div><div class='qb-note' title='transit'>transit</div></div><div class='qb-row qb-good'><div class='qb-label'>Unit Spec</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>12<em>/15</em></div><div class='qb-note' title='size-band match (4095 sqft); Class E'>size-band match (4095 sqft); Class E</div></div><div class='qb-row qb-weak'><div class='qb-label'>Commercial Terms</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/15</em></div></div><div class='qb-row qb-weak'><div class='qb-label'>Competitive WS</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/10</em></div></div><div class='qb-row qb-good'><div class='qb-label'>Brand Fit</div><div class='qb-track'><span class='qb-fill' style='width:100%'></span></div><div class='qb-score'>10<em>/10</em></div><div class='qb-note' title='strong community fit'>strong community fit</div></div><div class='qb-row qb-weak'><div class='qb-label'>Deal Edge</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/5</em></div><div class='qb-note' title='on-market'>on-market</div></div><div class='qb-total'><span class='qb-total-label'>Total</span><span class='qb-total-value'>43<em>/100</em></span></div></div></section>
 
   <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>11.6%</td></tr><tr><th>District population</th><td>183,157</td></tr><tr><th>Daily footfall (est.)</th><td>50,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Hammersmith and Fulham</td></tr></table></section>
 
