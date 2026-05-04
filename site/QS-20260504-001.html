@@ -1,0 +1,159 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medlock Square (formerly Etihad Campus North Stand expansion), Etihad Stadium, M11 3FF (new £300m entertainment destination opening late 2026 — 8-storey building per Manchester City Council planning 136763/FO/2023 with Class E commercial at Ground + Level 1 (new Club Shop + Ticket Office), City Museum at L2, Leisure Attraction L3 (Class F1(c)), workspace L4-L7 (Class E), plus new covered City Square fan zone + flexible event space with ground-floor commercial leisure F&amp;B; programme commits to &#x27;specialty coffee + all-day dining + signature restaurants + exclusive dining experiences&#x27; per official mancity.com announcement; via Manchester City FC / Hospitality &amp; Catering News / Manchester Wire / The Stadium Business 2026-03) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <div class='hero-img placeholder'>Other</div>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>Medlock Square (formerly Etihad Campus North Stand expansion), Etihad Stadium, M11 3FF (new £300m entertainment destination opening late 2026 — 8-storey building per Manchester City Council planning 136763/FO/2023 with Class E commercial at Ground + Level 1 (new Club Shop + Ticket Office), City Museum at L2, Leisure Attraction L3 (Class F1(c)), workspace L4-L7 (Class E), plus new covered City Square fan zone + flexible event space with ground-floor commercial leisure F&amp;B; programme commits to &#x27;specialty coffee + all-day dining + signature restaurants + exclusive dining experiences&#x27; per official mancity.com announcement; via Manchester City FC / Hospitality &amp; Catering News / Manchester Wire / The Stadium Business 2026-03)</h1>
+    <div class="meta-line">
+      <span>M11 3FF</span><span>·</span><span>Tier — · Other</span>
+      <span>·</span><span>Flagship</span><span>·</span><span>Reject</span>
+    </div>
+  </div>
+  <div class="hero-score score-rej"><strong>54</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier —</span>
+    <span class="tag tag-fmt">Flagship</span>
+    <span class='tag tag-muslim'>🕌 22% Muslim</span>
+    <span class='tag tag-second'>♻ Class E new-build shell-and-core Medlock Square commercial F&amp;B unit within Manchester City FC-developed 8-storey North Stand expansion — premium-specialty-coffee programmed F&amp;B brief explicitly stated by MCFC marketing-collateral 2026-03; landlord-handover-condition pending pre-letting pack release but new-build EPC-A specification + premium-specification fit-out base + sky-walk / zip-wire / immersive-event-venue / 3,000-cap event-space adjacency. Allow c.£280-460k Cat-B Flagship-band brand-overlay (kitchen + commercial extraction-flue cored to roof-vent through North Stand service-riser + grease-trap + 3-phase + dual-WC + accessible-WC + servery + Allaina-serif + qamariya stained-glass shopfront facing Medlock Square + dallah-pour bar + 70-100 cover seating + outdoor terrace consent on Medlock Square public realm + Yemeni-traditional-brew + family-friendly + alcohol-free + accessibility-compliance + EPC-A new-build) over shell base.</span>
+    <span class='tag'>2,500 sqft</span>
+    
+    <span class="tag">via Manchester City FC Medlock Square</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> Medlock Square M11 3FF is a generational DOCTRINE §13 escalation-trigger-1 (QSFI 90+) + trigger-2 (Flagship-format Tier-1 prime off-market) + trigger-5 (macro signal) stack — £300m Manchester City FC entertainment destination explicitly programmes &#x27;specialty coffee&#x27; + &#x27;signature restaurants&#x27; per official 2026-03 announcement, opening late 2026. Catchment stack is unique in M11: Etihad Stadium 53,400-cap × 25-30 home Premier League + cup matches per yr + Co-op Live arena 23,500-cap pre-existing co-anchor (Manchester&#x27;s largest indoor arena) + Connell Sixth Form College + East Manchester Leisure Centre + Beswick Community Hub + One Medlock Square 300-employee office + 3,000-cap immersive event venue = multi-vector catchment 1.5m+ annual visits within 200m radius. Brand Fit pillar 9-10/10: Manchester LA 22.28% Muslim + Ancoats &amp; Beswick ward 28-38% Muslim per ONS 2021 + &#x27;specialty coffee + signature restaurants + exclusive dining experiences&#x27; programme fits Yemeni-heritage hospitality-led DOCTRINE §3 destination-flagship envelope precisely + Etihad event-day overflow capture (Burnley / Wolves / Spurs away-fans + neutral hospitality + family-friendly alcohol-free positioning fits MCFC family-zone programming). DOCTRINE §7.4 competitive whitespace: no premium-specialty Yemeni / Middle Eastern coffee operator pre-let confirmed at Medlock Square as of 2026-03 — first-mover reach-out via MCFC commercial / hospitality leasing window 2026-Q2/Q3 critical pre-letting-completion. Predictive status — pre-LOI requires direct MCFC commercial leasing engagement for Medlock Square F&amp;B leasing pack + scheme tenant-mix-control + landlord-handover-condition + Cat-B contribution + match-day operating clauses + non-match-day day-trading viability under Connell Sixth Form College + One Medlock Square office staff catchment. Active-band 75-85 likely with manual override + leasing-pack confirmation; QSFI 90+ Escalate-band feasible if Manchester City FC commits Yemeni-heritage anchor partnership pre-letting.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>45</div><div class='factor-bar'><span style='width:45%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Traffic</div><div class='factor-value'>40</div><div class='factor-bar'><span style='width:40%'></span></div></div><div class='factor-cell f-ok'><div class='factor-label'>Prominence</div><div class='factor-value'>50</div><div class='factor-bar'><span style='width:50%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>22.3%</td></tr><tr><th>District population</th><td>551,938</td></tr><tr><th>Daily footfall (est.)</th><td>15,000</td></tr><tr><th>Daytime workers</th><td>12,000</td></tr><tr><th>Student catchment</th><td>8,000</td></tr><tr><th>Median HH income</th><td>£28,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Manchester</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Costa Coffee Lime Square Retail Park (~1.5km); Greggs Lime Square U7 (~1.5km); Pret a Manger Manchester Piccadilly (~3km); Caffè Nero Manchester city centre (~3km); Gail&#x27;s St Ann&#x27;s Square (~3.5km); Black Sheep Coffee Deansgate (~3.5km); No premium-specialty Yemeni / Middle-Eastern coffee operator inside M11 — Yemeni-heritage = whitespace; nearest % Arabica none in M11; nearest Blank Street none in M11 (1500m)</p><p>Medlock Square + Etihad Campus + Co-op Live arena = unique destination-anchor stack with no premium-specialty coffee operator confirmed pre-let as of 2026-03 — DOCTRINE §7.4 competitive whitespace is generational. Differentiator on Yemeni-heritage + heritage-craft + Allaina-serif + qamariya stained-glass + dallah-pour theatre + 70-100 cover hospitality-led + family-friendly + alcohol-free + Yemeni-distinct positioning = aligned with MCFC family-zone programming + matchday alcohol-free family-section trade + Connell Sixth Form College + One Medlock Square office staff non-matchday catchment.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>MCFC commercial / hospitality leasing-pack release timing — Medlock Square F&amp;B units may be pre-let to brand-partner / sponsor-tied operators (Etihad Aviation Group / sponsor stack) before public marketing window opens; first-mover engagement via MCFC commercial 2026-Q2 critical pre-pre-letting completion. Pre-LOI: identify MCFC commercial / Etihad hospitality leasing surveyor + scheme tenant-mix-management protocol + landlord-handover-condition (shell vs. Cat-A first-fix vs. Cat-B turnkey) + lease length + matchday-only-trading vs. all-day-trading clauses + 1954-Act inclusion / exclusion + premium / non-premium + landlord Cat-B contribution + EPC + Cat-B kitchen + extraction-routing-feasibility through 8-storey North Stand service-riser + RV + service charge + sponsor-exclusivity carve-outs + matchday-licensing + Manchester CC premises-licence transfer status all require MCFC direct contact pre-LOI.</li><li>Matchday-only trading economics — Etihad event-density 25-30 matches/yr × c.50,000 attendees + concert / fan-zone events at Medlock Square + Co-op Live arena drives spike-trading pattern that is structurally different from steady-state Tier-1 high-street trading; pre-LOI Year-1 trading-density assumption requires matchday-vs-non-matchday split + Connell Sixth Form College student trading + One Medlock Square office staff lunchtime trading + East Manchester Leisure Centre family trading + tourist / day-trip trading reconciliation against destination-flagship Cat-B payback horizon.</li><li>M11 3FF Etihad Campus catchment is destination-led not residential-led — local Beswick / Ancoats fringe residential catchment is c.5,000-8,000 within 500m walk vs. Bridgewater Wharf M5 376-apartment + 2,000+ resident new-build pipeline — Year-1 trading-density requires destination-pull-through via Yemeni-heritage destination-positioning on matchday + non-matchday brand-marketing rather than passing-trade.</li><li>Class E sub-class confirmation + matchday-licensing constraints + alcohol-free positioning vs. matchday hospitality-bar / sponsor-exclusivity tension — pre-LOI MCFC commercial scheme F&amp;B mix policy critical (e.g., is Yemeni-heritage premium-specialty coffee compatible with matchday hospitality-led wider F&amp;B mix that may include sponsor-tied alcoholic-beverage operators?).</li><li>8-storey North Stand mixed-use service-riser flue-routing for commercial kitchen extraction may be structurally complex on the new-build steel-frame — pre-LOI structural-survey + extraction-routing-feasibility + landlord-consent on flue routing through Class E workspace floors + sky-walk / zip-wire / immersive-event-venue scheme adjacency critical.</li><li>Rent-band working estimate undefined pending MCFC marketing-pack release — Medlock Square Class E F&amp;B comparable benchmarking via Co-op Live arena F&amp;B-pre-let comparable + Old Trafford Cricket Ground food village comparable + Wembley Hilton retail-comp + Tottenham Stadium F&amp;B comp + Anfield High Stand F&amp;B comp critical pre-LOI.</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>Identify MCFC commercial / Etihad hospitality leasing surveyor (likely Manchester City FC Commercial Director + external letting agent — Savills / CBRE / Cushman &amp; Wakefield / Knight Frank often retained for stadium-development F&amp;B leasing) + reach out within 48h via MCFC commercial enquiries + Manchester CC planning portal 136763/FO/2023 contact list to request (a) Medlock Square scheme F&amp;B leasing pack with available-unit list + Class E vs. Class F1(c) sub-class breakdown + &#x27;specialty coffee + signature restaurants&#x27; programmed-tenant-mix policy + scheme tenant-mix-management protocol + landlord-handover-condition + lease length + matchday-only vs. all-day-trading clauses + 1954-Act inclusion / exclusion + premium / non-premium + step-rent + landlord Cat-B contribution + EPC + Cat-B kitchen + extraction-routing-feasibility through 8-storey North Stand service-riser + RV + service charge + sponsor-exclusivity carve-outs + matchday-licensing + Manchester CC premises-licence transfer status; (b) headline rent + service charge + scheme-management-fee + total-occupancy-cost model + Co-op Live arena F&amp;B pre-let rent-comp + Old Trafford / Wembley / Tottenham / Anfield F&amp;B-leasing comp benchmarking; (c) Medlock Square F&amp;B masterplan + Connell Sixth Form College student F&amp;B partnership + One Medlock Square office staff lunchtime-trading partnership + East Manchester Leisure Centre family-trading partnership + Beswick Community Hub community-engagement partnership opportunities. Walk Etihad Campus + Joe Mercer Way + Citizens Way + Sportcity Way + Co-op Live arena + Connell Sixth Form College + Beswick Community Hub on matchday + non-matchday Mon-Fri 12:00-14:00 + 17:00-19:00 + Sat 11:00-17:00 to benchmark destination footfall + matchday vs. non-matchday split + Connell + East Manchester Leisure Centre family-flow.</p>
+      </div>
+      <a class='btn-primary' href='https://www.mancity.com/news/club/medlock-square-etihad-campus-north-stand-63908210' target='_blank' rel='noopener'>Open listing →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260504-001 · Generated 2026-05-04</div>
+</footer>
+
+</body></html>
