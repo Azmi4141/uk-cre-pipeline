@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>93 Vyse Street, Jewellery Quarter, Birmingham B18 6JZ (1,627 sqft Grade-II-listed 3-storey period premises with Vyse Street frontage; GF 593 sqft + 1F 549 sqft + 2F 485 sqft, two large rooms per floor + multiple WC + kitchen facilities, carpeted + central heating + air-conditioning + data cabling, on-street parking, sole-marketed by Siddall Jones direct) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.qb{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:22px}
+.qb-row{display:grid;grid-template-columns:170px 1fr 80px;column-gap:14px;row-gap:4px;align-items:center}
+.qb-label{font-size:13px;font-weight:600;color:var(--soil)}
+.qb-track{height:10px;background:#eef0f0;border-radius:6px;overflow:hidden}
+.qb-fill{display:block;height:100%;background:var(--weak);border-radius:6px;transition:width .3s ease}
+.qb-row.qb-good .qb-fill{background:var(--good)}
+.qb-row.qb-ok   .qb-fill{background:var(--ok)}
+.qb-score{font-family:var(--serif);font-size:18px;color:var(--ink);text-align:right;line-height:1}
+.qb-score em{font-style:normal;font-size:12px;color:#6b7280;margin-left:2px}
+.qb-note{grid-column:2 / 4;font-size:12px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.qb-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #eef0f0;padding-top:14px;margin-top:4px}
+.qb-total-label{font-size:13px;font-weight:600;color:var(--soil);letter-spacing:.3px;text-transform:uppercase}
+.qb-total-value{font-family:var(--serif);font-size:24px;color:var(--ink)}
+.qb-total-value em{font-style:normal;font-size:14px;color:#6b7280;margin-left:4px}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+  .qb{padding:16px}
+  .qb-row{grid-template-columns:120px 1fr 64px;column-gap:10px}
+  .qb-label{font-size:12px}
+  .qb-score{font-size:16px}
+  .qb-total-value{font-size:20px}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <img class='hero-img' src='../images/sv_aacbebd35b05.jpg' alt=''>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>93 Vyse Street, Jewellery Quarter, Birmingham B18 6JZ (1,627 sqft Grade-II-listed 3-storey period premises with Vyse Street frontage; GF 593 sqft + 1F 549 sqft + 2F 485 sqft, two large rooms per floor + multiple WC + kitchen facilities, carpeted + central heating + air-conditioning + data cabling, on-street parking, sole-marketed by Siddall Jones direct)</h1>
+    <div class="meta-line">
+      <span>B18 6JZ</span><span>·</span><span>Tier — · Other</span>
+      <span>·</span><span>Satellite</span><span>·</span><span>Watch</span>
+    </div>
+  </div>
+  <div class="hero-score score-watch"><strong>60</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier —</span>
+    <span class="tag tag-fmt">Satellite</span>
+    <span class='tag tag-muslim'>🕌 30% Muslim</span>
+    <span class='tag tag-second'>♻ Grade-II-listed period 3-storey premises with retained fit-out (carpets + central heating + air-conditioning + data cabling + multiple WC + kitchen facilities per floor) = Cat-A office/retail base. Allow c.£180-280k Cat-B Satellite-band brand-overlay across vertical Yemeni-hospitality format (commercial kitchen on GF or 1F + extraction-flue routing through Grade-II-listed parade roof + listed-building-consent + advertisement-consent + 3-phase + commercial WCs + servery + Allaina-serif fascia + qamariya stained-glass shopfront overlay preserving Grade-II character + dallah-pour bar + 50-70 cover seating across GF + 1F dining-rooms + 2F private-dining / study-room / lounging-area aligned with BRAND.md &#x27;Arabic furniture, lounging areas, study rooms&#x27; brand essence + Yemeni-traditional-brew + family-friendly + alcohol-free + accessibility-compliance + heritage-feature retention) over Cat-A office base. Three-floor vertical-flow Yemeni-hospitality destination-format alignment with DOCTRINE §3 Flagship 2,000-4,500 sqft hospitality-led ambition + GIA 1,627 sqft within Satellite-band 800-1,800 sqft + multiple-WC + kitchen-per-floor reduces Cat-B fit-out friction.</span>
+    <span class='tag'>1,627 sqft</span>
+    <span class='tag'>£22,750/yr</span>
+    <span class="tag">via Siddall Jones direct</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> 93 Vyse Street B18 6JZ Siddall Jones direct 1,627 sqft Grade-II-listed 3-storey period premises @ concrete £14 psf = mid-quartile B18 rent corridor + lowest-£/sqft of any vertical-flow 3-storey Birmingham scout candidate to date (vs. B15 9 Greenfield Crescent Siddall Jones 2,927 sqft 3-storey rent-on-application + B17 152A High Street 1F+GF Bangla Lounge fitted £25k pa). Discovery edge = three-floor vertical-flow Grade-II-listed period building with retained-Cat-A fit-out + multiple-WC + kitchen-per-floor + Vyse Street prime-spine adjacency to Chamberlain Clock junction (Vyse Street + Warstone Lane + Frederick Street confluence) + Jewellery Quarter Metro 0.3mi + Snow Hill 0.5mi walk-up + tourism draw 700k+ pa cross-trading. Siddall Jones same-agent multiple-instruction Birmingham (B17 89-89A + Unit 91 + 17 High Street + B18 56 Spencer Street + B18 93 Vyse Street + 34 Tenby Street B1 = 6-deep bilateral leverage). Counter-balance: Brand Fit pillar 7-9/10 ceiling on B18 25-40% Muslim density (Soho ward 50-60% + Jewellery Quarter ward 25-35%) materially above B17 10-13% / B15 19% / B14 21.7%. Friction: Grade-II-listed-building shopfront alteration + advertisement-consent + extraction-flue routing through period roof + Birmingham CC Conservation Officer + Heritage Officer pre-application advice + design-and-access-statement c.6-12-week critical-path pre-trading.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>30</div><div class='factor-bar'><span style='width:30%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Traffic</div><div class='factor-value'>40</div><div class='factor-bar'><span style='width:40%'></span></div></div><div class='factor-cell f-weak'><div class='factor-label'>Prominence</div><div class='factor-value'>40</div><div class='factor-bar'><span style='width:40%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>80</div><div class='factor-bar'><span style='width:80%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class='section'><h2>QSFI breakdown</h2><div class='qb'><div class='qb-row qb-ok'><div class='qb-label'>Catchment Demand</div><div class='qb-track'><span class='qb-fill' style='width:68%'></span></div><div class='qb-score'>17<em>/25</em></div><div class='qb-note' title='halal-dense; student catchment'>halal-dense; student catchment</div></div><div class='qb-row qb-ok'><div class='qb-label'>Footfall &amp; Vis.</div><div class='qb-track'><span class='qb-fill' style='width:45%'></span></div><div class='qb-score'>9<em>/20</em></div><div class='qb-note' title='transit'>transit</div></div><div class='qb-row qb-good'><div class='qb-label'>Unit Spec</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>12<em>/15</em></div><div class='qb-note' title='in-range size (1627 sqft); Class E'>in-range size (1627 sqft); Class E</div></div><div class='qb-row qb-good'><div class='qb-label'>Commercial Terms</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>12<em>/15</em></div><div class='qb-note' title='£14 PSF — strong'>£14 PSF — strong</div></div><div class='qb-row qb-weak'><div class='qb-label'>Competitive WS</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/10</em></div></div><div class='qb-row qb-good'><div class='qb-label'>Brand Fit</div><div class='qb-track'><span class='qb-fill' style='width:100%'></span></div><div class='qb-score'>10<em>/10</em></div><div class='qb-note' title='strong community fit'>strong community fit</div></div><div class='qb-row qb-weak'><div class='qb-label'>Deal Edge</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/5</em></div><div class='qb-note' title='on-market'>on-market</div></div><div class='qb-total'><span class='qb-total-label'>Total</span><span class='qb-total-value'>60<em>/100</em></span></div></div></section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Muslim population</th><td>29.9%</td></tr><tr><th>District population</th><td>1,144,917</td></tr><tr><th>Daily footfall (est.)</th><td>14,000</td></tr><tr><th>Daytime workers</th><td>13,000</td></tr><tr><th>Student catchment</th><td>25,000</td></tr><tr><th>Median HH income</th><td>£34,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr><tr><th>Local authority</th><td>Birmingham</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Urban Cafe Bar Kitchen (The Big Peg ~50m W); Cafe Neo 87 Spencer Street (~250m); Vee&#x27;s Deli 83 Vyse Street (~immediate adjacent); Coffee Tales Jewellery Quarter (~400m); Faculty Coffee Birmingham (~600m); 1000 Trades Frederick Street (~500m premium-indie pub-bar); Lasan Hampton Street (~500m premium Indian); Saint Paul&#x27;s House (~350m premium boutique-hotel restaurant); The Button Factory Frederick Street (~500m bar-kitchen); Cappadocia Frederick Street (~500m Turkish); Maneki Ramen Ludgate Hill (~600m Japanese); Damascena Hagley Road B16 8PE (~1.4mi SW Middle-Eastern peer); No premium-specialty Yemeni coffee operator in B18 — Yemeni-heritage = whitespace within strong indie F&amp;B cluster + Conservation-Area heritage-feature alignment scarcity (50m)</p><p>Vyse Street prime-spine + Chamberlain Clock junction + tourism-anchor Coffin Works + Pen Museum + JQ Cemetery + Saint Paul&#x27;s Square cross-trading. Differentiator on Yemeni-heritage + Allaina-serif + qamariya stained-glass + dallah-pour theatre + 50-70 cover vertical Satellite-format + 2F private-dining/study-room aligned with BRAND.md &#x27;Arabic furniture, lounging areas, study rooms&#x27; + family-friendly + alcohol-free vs. Urban Cafe brunch-led + Cafe Neo casual + Coffee Tales / Faculty premium-indie-coffee + 1000 Trades alcohol-led + Saint Paul&#x27;s House premium-restaurant + Cappadocia Turkish + Maneki Ramen Japanese format-cluster differentiation.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>Grade-II-listed-building Conservation Area shopfront alteration + Allaina-serif fascia + qamariya stained-glass shopfront installation + extraction-flue routing through Grade-II-listed parade roof + advertisement-consent + listed-building-consent + Birmingham CC Conservation Officer + Heritage Officer pre-application advice + design-and-access-statement essential pre-LOI; Jewellery Quarter Conservation Area + Article 4 cover most of B18 = heaviest heritage-overlay friction of any Birmingham scout to date.</li><li>Listed as Office and Retail by Siddall Jones — Class E hospitality-led use confirmation per Birmingham CC LDC + 2020 Class E reform absorbing A1/A3/B1/B2 + permitted-use-clause critical pre-LOI + Vyse Street narrow frontage may constrain commercial extraction-flue installation pre-LOI.</li><li>Three-floor demise = vertical-flow Yemeni-hospitality alignment but extraction-flue routing from GF kitchen through 1F + 2F + Grade-II roof critical pre-LOI + accessibility-compliance + DDA-customer-WC retrofit on GF dining-room demise + 1F + 2F lift-installation feasibility within Grade-II envelope pre-LOI.</li><li>£14 psf rent-corridor concrete + Cat-B £180-280k Satellite-band brand-overlay = 10-15-yr lease length + step-rent + landlord Cat-B contribution + tenant break + 1954-Act-renewal stance + RR mechanism critical pre-LOI; Siddall Jones flexibility flagged but specific Cat-B contribution + step-rent + RR mechanism pre-LOI.</li><li>Retained Cat-A office fit-out = blank-canvas reformat to Yemeni-hospitality format may incur full Cat-B build-out without Cat-A retail-base savings; verify retained kitchen + WC + extraction-flue specification with Siddall Jones direct pre-LOI.</li><li>On-street parking only + no service-yard demise = back-of-house deliveries via shopfront pre-LOI + servicing-impact-assessment per Birmingham CC Highways pre-LOI.</li><li>B18 6JZ postcodes.io enrichment may produce mixed result with Soho ward vs. Jewellery Quarter ward boundary = catchment scoring partial-confidence (consistent with prior-tick pattern QS-130 N89JJ + QS-008 N22 5JG + QS-027 E10 6BB + QS-015 BR1 1JG + QS-022 M2 5AS + QS-028 M5 4PX + QS-014 M19 3DL + QS-002 M40 5AX + QS-008 B6 6 + QS-005 B6 7SS + QS-012 B7 5DZ).</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>Phone Siddall Jones direct (Edward Siddall-Jones / Scott Rawlings 07745 521743 / Sophie Froggatt 07842 013854 — 0121 387 6567 / 0121 638 0500) within 48h to request (a) full marketing pack for 93 Vyse Street B18 6JZ with listing currency confirmation in May 2026 + exact GIA breakdown verification across GF 593 + 1F 549 + 2F 485 sqft + Class E hospitality use confirmation per Birmingham CC LDC + 2020 Class E reform absorbing A1/A3/B1/B2 + retained-Cat-A office/retail fit-out condition + retained-kitchen + WC + extraction-flue specification per floor + lease length (10-15-yr Cat-B-payback minimum for vertical Satellite-band capex c.£180-280k) + 1954-Act + premium / non-premium + step-rent + landlord Cat-B contribution + EPC + Schedule-of-Condition + Cat-B kitchen + extraction-routing-feasibility through Grade-II-listed parade roof + commercial WCs + DDA + lift-installation feasibility + RV £20-25k + service charge + RR mechanism + tenant break + alteration-consent + outdoor-seating consent on Vyse Street pavement + advertisement-consent for Allaina-serif fascia + qamariya stained-glass shopfront overlay preserving Grade-II character + previous tenant Companies House cross-reference + tenant-vacate-rationale + Vyse Street narrow-frontage extraction-flue + back-of-house servicing pre-LOI; (b) consolidated Siddall Jones Birmingham 6-deep marketing pack including B17 89-89A + Unit 91 + 17 High Street Harborne + B18 56 Spencer Street + 93 Vyse Street + 34 Tenby Street B1 = bilateral-leverage pitch for cross-Jewellery-Quarter / Harborne tenant-mix-management coordination across same-agent demises; (c) Yemeni-hospitality vertical Satellite-band 50-70 cover Conservation-Area-Grade-II-heritage-feature retention + 2F private-dining/study-room/lounging-area aligned with BRAND.md &#x27;Arabic furniture, lounging areas, study rooms&#x27; brand essence + family-friendly + alcohol-free positioning differentiator vs. Urban Cafe brunch-led + Cafe Neo casual + Coffee Tales / Faculty premium-indie + 1000 Trades alcohol-led + Saint Paul&#x27;s House premium + Cappadocia Turkish + Maneki Ramen Japanese format-cluster + Damascena 1.4mi SW Middle-Eastern peer differentiation pre-LOI; (d) Birmingham CC Conservation Officer + Heritage Officer pre-application advice + design-and-access-statement timeline c.6-12-week critical-path + heritage-overlay-cost-uplift c.£20-40k Cat-B Grade-II-listed brand-overlay materially above non-Conservation-Area base.</p>
+      </div>
+      <a class='btn-primary' href='https://www.google.com/search?q=B18+6JZ+commercial+site%3Asiddalljones.com' target='_blank' rel='noopener'>Find B18 6JZ on Siddalljones →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260507-005 · Generated 2026-05-07</div>
+</footer>
+
+</body></html>
