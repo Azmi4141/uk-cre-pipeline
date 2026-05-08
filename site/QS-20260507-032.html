@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Royal Albert Dock estate, Liverpool L3 4AF (UNESCO World Heritage Site 2004, 375,000 sqft 56-tenant Grade I listed scheme comprising Edward Pavilion + Britannia Pavilion + Atlantic Pavilion + Colonnades; acquired May 2024 by General Projects + investment-management company neo capital for £40m from Aberdeen Standard Investors who had purchased it in 2018 for c.£43m; CBRE appointed asset manager; new owner publicly committed to repositioning with new bars and restaurants; Tate Liverpool closed for refurbishment 2024-2027 dropping visitor base c.20-25% from mature 2018-2023 c.5.5M annual benchmark; immediately adjacent Liverpool ONE c.25M annual footfall + Pier Head Three Graces + Mersey Ferries + cruise terminal; DOCTRINE §13 macro signal — scheme-level intelligence covering forward-window 2026-2028 tenant-mix rotation trajectory across Britannia + Atlantic + Colonnades pavilions beyond Edward Pavilion same-cycle Active On-market unit) · UK Site Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* BRAND.md tokens — qamariya stained-glass palette (source of truth) */
+  --qam-coffee:#3B2418; --qam-terracotta:#B5532A; --qam-saffron:#D4A24C;
+  --qam-jade:#5A7B5C; --qam-cream:#F4ECDC; --qam-ink:#1A0E08;
+
+  /* Operational kit (logo-green family) — kept until full migration is approved */
+  --land:#056D38; --sprout:#9CCF84; --soil:#4C3219;
+  --canvas:#F1F2F2; --ink:#282828;
+  --land-soft:#dcfce7;
+  --good:#16a34a; --ok:#ca8a04; --weak:#9ca3af;
+  --esc:#b91c1c; --act:#16a34a; --watch:#ca8a04; --rej:#9ca3af;
+  --serif: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:var(--sans); background:var(--canvas); color:var(--ink); }
+a { color:inherit; text-decoration:none; }
+
+header.detail-hero{position:relative;height:340px;overflow:hidden;background:var(--soil)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:48px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,40,40,.1) 0%,rgba(40,40,40,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:32px 40px;color:#fff}
+.hero-overlay .back{position:absolute;top:24px;left:40px;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;color:#fff;font-size:13px;font-weight:500}
+.hero-overlay h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;margin:0 0 8px;letter-spacing:-0.5px}
+.hero-overlay .meta-line{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--sprout)}
+.hero-score{position:absolute;top:24px;right:40px;width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;color:var(--ink);font-family:var(--serif);font-size:36px;line-height:1;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.hero-score.score-esc{background:var(--esc);color:#fff}.hero-score.score-act{background:var(--act);color:#fff}
+.hero-score.score-watch{background:var(--watch)}.hero-score.score-rej{background:var(--rej);color:#fff}
+.hero-score em{font-style:normal;font-size:11px;letter-spacing:.5px;margin-top:4px;opacity:.8;font-family:var(--sans)}
+.hero-score strong{font-family:var(--serif)}
+
+.container{max-width:1100px;margin:0 auto;padding:48px 40px}
+.section{margin-bottom:48px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--soil);margin:0 0 18px;letter-spacing:-0.3px;border-bottom:2px solid var(--sprout);padding-bottom:10px}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.tag{font-size:12px;padding:5px 12px;background:var(--canvas);border-radius:99px;font-weight:500}
+.tag-tier{background:var(--land);color:#fff}
+.tag-fmt{background:var(--soil);color:#fff}
+.tag-muslim{background:var(--land-soft);color:var(--land);font-weight:600}
+.tag-second{background:var(--sprout);color:var(--soil);font-weight:600}
+
+.factor-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.factor-cell{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+.factor-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:600;margin-bottom:8px}
+.factor-value{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:10px;color:var(--ink)}
+.factor-bar{height:5px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.factor-bar > span{display:block;height:100%;background:var(--weak)}
+.factor-cell.f-good .factor-bar > span,.factor-cell.f-good .factor-value{color:var(--good)}
+.factor-cell.f-good .factor-bar > span{background:var(--good)}
+.factor-cell.f-ok .factor-bar > span{background:var(--ok)}
+.factor-cell.f-ok .factor-value{color:var(--ok)}
+
+.qb{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:22px}
+.qb-row{display:grid;grid-template-columns:170px 1fr 80px;column-gap:14px;row-gap:4px;align-items:center}
+.qb-label{font-size:13px;font-weight:600;color:var(--soil)}
+.qb-track{height:10px;background:#eef0f0;border-radius:6px;overflow:hidden}
+.qb-fill{display:block;height:100%;background:var(--weak);border-radius:6px;transition:width .3s ease}
+.qb-row.qb-good .qb-fill{background:var(--good)}
+.qb-row.qb-ok   .qb-fill{background:var(--ok)}
+.qb-score{font-family:var(--serif);font-size:18px;color:var(--ink);text-align:right;line-height:1}
+.qb-score em{font-style:normal;font-size:12px;color:#6b7280;margin-left:2px}
+.qb-note{grid-column:2 / 4;font-size:12px;color:#6b7280;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.qb-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #eef0f0;padding-top:14px;margin-top:4px}
+.qb-total-label{font-size:13px;font-weight:600;color:var(--soil);letter-spacing:.3px;text-transform:uppercase}
+.qb-total-value{font-family:var(--serif);font-size:24px;color:var(--ink)}
+.qb-total-value em{font-style:normal;font-size:14px;color:#6b7280;margin-left:4px}
+
+.kv{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+.kv th,.kv td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f2f2}
+.kv th{background:var(--canvas);font-weight:600;color:var(--soil);width:35%;font-size:13px}
+.kv td{font-family:var(--mono);color:var(--ink);font-size:14px}
+.kv tr:last-child th,.kv tr:last-child td{border-bottom:none}
+
+.callout{background:linear-gradient(135deg,var(--canvas),#fff);border-left:4px solid var(--land);padding:20px 24px;border-radius:8px;margin:0 0 24px;font-size:15px;line-height:1.6}
+.callout strong{color:var(--land);font-weight:600}
+
+.action-card{background:linear-gradient(135deg,var(--land),#0a8a48);color:#fff;padding:28px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.action-card h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-0.3px}
+.action-card p{margin:0;font-size:14px;opacity:.9;max-width:600px}
+.btn-primary{display:inline-block;background:#fff;color:var(--land);padding:12px 22px;border-radius:99px;font-weight:600;font-size:14px;letter-spacing:.5px;white-space:nowrap;transition:transform .12s}
+.btn-primary:hover{transform:translateY(-2px)}
+
+.risks{background:#fff;border:1px solid #fee2e2;border-left:4px solid var(--esc);border-radius:8px;padding:20px 24px;margin:0}
+.risks ul{margin:0;padding-left:20px;color:#7f1d1d;font-size:14px;line-height:1.7}
+
+footer{padding:32px 40px;text-align:center;color:#9ca3af;font-size:11px;background:#fff;border-top:1px solid #e5e7eb;letter-spacing:.5px}
+
+@media(max-width:720px){
+  .hero-overlay{padding:24px 20px}
+  .hero-overlay h1{font-size:26px}
+  .hero-overlay .back{top:16px;left:20px;padding:10px 16px;min-height:44px;display:inline-flex;align-items:center}
+  .hero-score{width:64px;height:64px;font-size:24px;top:14px;right:16px}
+  .hero-score em{font-size:9px}
+  .container{padding:28px 20px}
+  .factor-grid{grid-template-columns:repeat(2,1fr)}
+  .factor-cell{padding:14px}
+  .factor-value{font-size:28px}
+  .action-card{flex-direction:column;align-items:flex-start;padding:22px}
+  .btn-primary{min-height:44px;display:inline-flex;align-items:center}
+  .kv th,.kv td{padding:11px 14px;font-size:13px}
+  .kv th{width:42%}
+  .qb{padding:16px}
+  .qb-row{grid-template-columns:120px 1fr 64px;column-gap:10px}
+  .qb-label{font-size:12px}
+  .qb-score{font-size:16px}
+  .qb-total-value{font-size:20px}
+}
+</style>
+</head><body>
+
+<header class="detail-hero">
+  <div class='hero-img placeholder'>Liverpool</div>
+  <div class="hero-overlay">
+    <a class="back" href="../index.html">← All locations</a>
+    <h1>Royal Albert Dock estate, Liverpool L3 4AF (UNESCO World Heritage Site 2004, 375,000 sqft 56-tenant Grade I listed scheme comprising Edward Pavilion + Britannia Pavilion + Atlantic Pavilion + Colonnades; acquired May 2024 by General Projects + investment-management company neo capital for £40m from Aberdeen Standard Investors who had purchased it in 2018 for c.£43m; CBRE appointed asset manager; new owner publicly committed to repositioning with new bars and restaurants; Tate Liverpool closed for refurbishment 2024-2027 dropping visitor base c.20-25% from mature 2018-2023 c.5.5M annual benchmark; immediately adjacent Liverpool ONE c.25M annual footfall + Pier Head Three Graces + Mersey Ferries + cruise terminal; DOCTRINE §13 macro signal — scheme-level intelligence covering forward-window 2026-2028 tenant-mix rotation trajectory across Britannia + Atlantic + Colonnades pavilions beyond Edward Pavilion same-cycle Active On-market unit)</h1>
+    <div class="meta-line">
+      <span>L3 4AF</span><span>·</span><span>Tier 1 · Liverpool</span>
+      <span>·</span><span>Flagship</span><span>·</span><span>Reject</span>
+    </div>
+  </div>
+  <div class="hero-score score-rej"><strong>56</strong><em>QSFI · /100</em></div>
+</header>
+
+<div class="container">
+
+  <div class="tags">
+    <span class="tag tag-tier">Tier 1</span>
+    <span class="tag tag-fmt">Flagship</span>
+    
+    <span class='tag tag-second'>♻ Royal Albert Dock estate L3 4AF DOCTRINE §13 macro signal entry — General Projects + neo capital £40m May 2024 acquisition + CBRE asset-management appointment + publicly-committed new-bars-and-restaurants repositioning under new owner = primary forward-window opportunity vector for L3 batch beyond Edward Pavilion same-cycle Active lead. Britannia Pavilion + Atlantic Pavilion + Colonnades + wider 56-tenant scheme covers c.50+ retail and office tenants with c.£3.6m annual rent roll and food-and-drink operators pulling close to half total revenue = c.£1.8m F&amp;B rental base across the scheme. Predictive forward-window 2-3-yr tenant-mix-rotation trajectory under General Projects&#x27; new-owner repositioning playbook (General Projects&#x27; London track record on heritage repositioning includes Earl&#x27;s Court + various Soho / Covent Garden assets — institutional-quality repositioning execution + leasing flexibility during repositioning period) = leasing-pipeline vector + rent-stabilisation period material to LOI strategy. Allow c.£200-360k Cat-B Flagship-band brand-overlay for any Britannia + Atlantic + Colonnades demise re-letting (commercial-kitchen retrofit + extraction-flue routing through Grade I listed UNESCO fabric + grease-trap + 3-phase + commercial WCs + DDA + Allaina-serif fascia + qamariya stained-glass shopfront overlay subject to listed-building consent + General Projects scheme tenant-mix-management protocol + 60-100 cover seating + family-friendly + alcohol-free positioning + dallah-pour theatre + Mersey-side terrace exposure where applicable).</span>
+    <span class='tag'>4,500 sqft</span>
+    
+    <span class="tag">via InvestLiverpool — Royal Albert Dock £40m sale</span>
+  </div>
+
+  <div class="callout"><strong>Discovery edge:</strong> Royal Albert Dock estate L3 4AF DOCTRINE §13 macro signal — General Projects + neo capital £40m May 2024 acquisition from Aberdeen Standard Investors + CBRE asset-management appointment + publicly-committed new-bars-and-restaurants repositioning = primary forward-window opportunity vector for L3 batch. Discovery edge = (a) ownership transition with publicly-committed new-bars-and-restaurants repositioning is highest-priority DOCTRINE §13 macro signal in Liverpool Tier-2 cycle to date — institutional-quality new owner with London heritage-repositioning track record (General Projects) + investment-management capital (neo capital) + UK-leading commercial agency asset-management (CBRE) signals 2-3-yr tenant-mix-rotation trajectory across Britannia + Atlantic + Colonnades pavilions beyond Edward Pavilion same-cycle Active On-market lead; (b) early-window opportunity to enter scheme on flexible terms during repositioning period before mature institutional-landlord rent-discipline reasserts; (c) consolidated CBRE Liverpool waterfront / cultural-quarter relationship-stack establishment (Mann Island + Royal Albert Dock both CBRE asset-managed) = single-agent contact provides cross-scheme pipeline access; (d) F&amp;B operators pull close to half scheme £3.6m annual rent roll = c.£1.8m F&amp;B rental base = scheme tenant-mix is materially F&amp;B-weighted = customer-base aligned to hospitality-led visitor + leisure positioning + Qamaria&#x27;s family-friendly + alcohol-free heritage-craft positioning offers differentiation within Cuban / Spanish / Italian / Indian / Mediterranean alcohol-led scheme cluster. Counter-balance: scheme-level macro signal + Predictive forward-window opportunity not unit-specific Active acquisition; pursuit requires patient relationship-cultivation with CBRE + General Projects + neo capital + Albert Dock Liverpool Co. covering 12-24-month cycle; Liverpool LA 8% Muslim Brand-Fit structural cap; Tate Liverpool closure 2024-2027 visitor-base impact c.-20-25%; Grade I listed-building consent + UNESCO World Heritage Site overlay critical-path c.6-12 weeks per unit.</div>
+
+  <section class="section">
+    <h2>Five-Factor Read</h2>
+    <div class="factor-grid"><div class='factor-cell f-weak'><div class='factor-label'>Visibility</div><div class='factor-value'>45</div><div class='factor-bar'><span style='width:45%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Traffic</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div><div class='factor-cell f-ok'><div class='factor-label'>Prominence</div><div class='factor-value'>70</div><div class='factor-bar'><span style='width:70%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Accessibility</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div><div class='factor-cell f-good'><div class='factor-label'>Size</div><div class='factor-value'>95</div><div class='factor-bar'><span style='width:95%'></span></div></div></div>
+  </section>
+
+  <section class='section'><h2>QSFI breakdown</h2><div class='qb'><div class='qb-row qb-ok'><div class='qb-label'>Catchment Demand</div><div class='qb-track'><span class='qb-fill' style='width:48%'></span></div><div class='qb-score'>12<em>/25</em></div><div class='qb-note' title='student catchment; strong daytime'>student catchment; strong daytime</div></div><div class='qb-row qb-good'><div class='qb-label'>Footfall &amp; Vis.</div><div class='qb-track'><span class='qb-fill' style='width:100%'></span></div><div class='qb-score'>20<em>/20</em></div><div class='qb-note' title='70,000/day; transit; wide frontage'>70,000/day; transit; wide frontage</div></div><div class='qb-row qb-good'><div class='qb-label'>Unit Spec</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>12<em>/15</em></div><div class='qb-note' title='in-range size (4500 sqft); Class E'>in-range size (4500 sqft); Class E</div></div><div class='qb-row qb-weak'><div class='qb-label'>Commercial Terms</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/15</em></div></div><div class='qb-row qb-weak'><div class='qb-label'>Competitive WS</div><div class='qb-track'><span class='qb-fill' style='width:0%'></span></div><div class='qb-score'>0<em>/10</em></div></div><div class='qb-row qb-good'><div class='qb-label'>Brand Fit</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>8<em>/10</em></div></div><div class='qb-row qb-good'><div class='qb-label'>Deal Edge</div><div class='qb-track'><span class='qb-fill' style='width:80%'></span></div><div class='qb-score'>4<em>/5</em></div><div class='qb-note' title='predictive signal'>predictive signal</div></div><div class='qb-total'><span class='qb-total-label'>Total</span><span class='qb-total-value'>56<em>/100</em></span></div></div></section>
+
+  <section class="section"><h2>Catchment</h2><table class="kv"><tr><th>Daily footfall (est.)</th><td>70,000</td></tr><tr><th>Daytime workers</th><td>70,000</td></tr><tr><th>Student catchment</th><td>62,000</td></tr><tr><th>Median HH income</th><td>£32,000</td></tr><tr><th>Transit</th><td>Adjacent ✓</td></tr></table></section>
+
+  <section class="section"><h2>Competitive context</h2><p><strong>Nearest direct competitor:</strong> Royal Albert Dock 56-tenant scheme F&amp;B cluster — Gusto Italian (Edward Pavilion 5/6); Revolución de Cuba (Edward Pavilion); Lunyalita / Lunya (Britannia Pavilion Spanish/Catalan); Maray (Mediterranean / Middle-Eastern-influenced); Smugglers Cove (Britannia Pavilion rum bar); Spice Lounge (Indian); PanAm (American); Caffè Nero (Albert Dock chain); Costa (Albert Dock chain); Mann Island F&amp;B cluster c.300m N (Brasco Lounge + &amp; Company + Dockside Dining Club 10-vendor food hall); Liverpool ONE F&amp;B + chain-coffee cluster c.300m E; Castle Street A5040 c.0.4mi NE; Old Hall Street office-fringe c.0.4mi N; No premium-Yemeni / Middle-Eastern coffee operator across L3 waterfront / cultural-quarter sweep — Maray&#x27;s Mediterranean / Middle-Eastern-influence is closest customer-segmentation comp = clear category-whitespace differentiator on Yemeni-heritage premium-specialty coffee + heritage-craft hospitality + family-friendly + alcohol-free format (30m)</p><p>Royal Albert Dock UNESCO World Heritage Site 2004 + Grade I listed 4-pavilion scheme + 375,000 sqft + 56-tenant + £3.6m annual rent roll with F&amp;B c.50% revenue share = c.£1.8m F&amp;B rental base; General Projects + neo capital £40m May 2024 acquisition + CBRE asset-management + publicly-committed new-bars-and-restaurants repositioning; Tate Liverpool closure 2024-2027 visitor base c.-20-25% partially offset by Maritime Museum + Beatles Story + Mersey Ferries + cruise + Pier Head Three Graces + Liverpool ONE c.25M adjacent annual footfall. DOCTRINE §13 macro signal scheme-level intelligence + Predictive forward-window 2-3-yr tenant-mix-rotation trajectory across Britannia + Atlantic + Colonnades pavilions.</p></section>
+
+  <section class="section">
+    <h2>Risks &amp; unknowns</h2>
+    <div class="risks"><ul><li>DOCTRINE §13 macro signal entry — scheme-level Predictive intelligence not unit-specific Active acquisition; pursuit requires patient relationship-cultivation with CBRE Liverpool retail/leisure + General Projects + neo capital + Albert Dock Liverpool Co. covering 12-24-month forward-window cycle; primary monitoring channel is CBRE Liverpool quarterly leasing pipeline brief + General Projects portfolio communications + Albert Dock Liverpool Co. asset-management public reporting + Companies House Royal Albert Dock Liverpool Limited (03355588) + General Projects + neo capital filings + competitor-press tracking pre-LOI.</li><li>Liverpool LA Muslim 8.0% structural Brand-Fit pillar 4-5/10 cap shared with L2 + Edward Pavilion + Old Hall Street + Mann Island same-batch pattern; tourist + cultural-cluster daytime overlay materially compensates but customer-segmentation differentiation on alcohol-free + family-friendly + heritage-craft positioning vs. saturated Albert Dock alcohol-led F&amp;B cluster (Cuban + Spanish + Italian + Indian + Mediterranean + American) critical pre-LOI.</li><li>Tate Liverpool closure for refurbishment 2024-2027 = Royal Albert Dock visitor base c.-20-25% on mature 2018-2023 trading benchmark; new-owner repositioning trajectory partially compensates but verify CBRE / Albert Dock Liverpool Co. quarterly visitor data + sub-trading-period footfall benchmark + Tate-reopening 2027 trajectory pre-LOI critical.</li><li>Grade I listed-building consent + UNESCO World Heritage Site overlay + Liverpool City Council Conservation / Heritage Officer pre-application advice critical-path c.6-12 weeks per unit; Royal Albert Dock estate-management protocol + scheme tenant-mix-management discipline + scheme-management-company / freeholder identity + scheme service charge + estate insurance + repair contribution + Albert Dock estate-marketing levy material per LOI; verify pre-LOI critical.</li><li>General Projects + neo capital new-owner repositioning playbook is institutional-quality (London heritage-repositioning track record + UK-leading commercial agency CBRE asset-management) but covers 2-3-yr tenant-mix-rotation trajectory + rent-stabilisation period uncertainty + repositioning-period covenant covenant-strength fluctuation; balance against early-window opportunity to enter scheme on flexible terms during repositioning vs. mature-stabilisation rent-discipline; phone CBRE Liverpool retail/leisure direct within 48h for new-owner repositioning roadmap + 2026-2028 leasing pipeline + cross-Albert Dock pavilion vacancy / re-letting forecast pre-LOI critical.</li><li>Saturated Albert Dock F&amp;B cluster (Gusto + Revolución de Cuba + Lunyalita + Maray + Smugglers Cove + Spice Lounge + PanAm) + scheme hot-drinks / coffee category exclusivity carve-outs vs. Caffè Nero Albert Dock + Costa Albert Dock + scheme operators material; verify scheme tenant-mix-management protocol + category-exclusivity carve-outs + customer-segmentation differentiation pre-LOI critical.</li><li>Postcode L3 4AF generic for Royal Albert Dock estate; specific Britannia Pavilion + Atlantic Pavilion + Colonnades demise postcodes vary slightly across scheme (L3 4AA / L3 4AB / L3 4AF / L3 4FN); verify exact target-unit postcode via CBRE / Metis / Albert Dock Liverpool Co. direct pre-LOI; postcodes.io enrichment may be partial-confidence consistent with prior-tick non-blocking pattern.</li></ul></div>
+  </section>
+
+  <section class="section">
+    <div class="action-card">
+      <div>
+        <h3>Recommended next action (24–72 hr)</h3>
+        <p>DOCTRINE §13 macro signal monitoring file + relationship-cultivation pipeline for QS-20260508 Royal Albert Dock estate L3 4AF — primary pre-LOI actions are scheme-level intelligence-track + relationship-stack establishment: (a) phone CBRE Liverpool retail/leisure asset-management direct within 48h for Royal Albert Dock new-owner repositioning roadmap + General Projects + neo capital 2026-2028 leasing pipeline + cross-Albert Dock pavilion vacancy / re-letting forecast + Britannia + Atlantic + Colonnades forward-window vacancy trajectory + Edward Pavilion same-cycle pricing diligence cross-reference; (b) Companies House Royal Albert Dock Liverpool Limited (03355588) + General Projects + neo capital + Albert Dock Liverpool Co. operating-entity corporate-health monitoring (filings + director changes + accounts + satisfaction of charges) on quarterly cycle for forward-window scheme corporate-stability + sub-acquisition cross-tenant covenant cross-reference; (c) Land Registry AP1 lease-registration cross-reference for Royal Albert Dock scheme freeholder identity + sub-pavilion leasehold structure + tenant-by-tenant lease-expiry mapping per DOCTRINE §7.1 lease-expiry inference protocol; (d) Albert Dock Liverpool Co. + CBRE quarterly visitor-data + footfall benchmark + Tate-closure-period 2024-2027 trading rhythm + Tate-reopening 2027 trajectory + sub-trading-period seasonal split tracking; (e) competitor-press tracking (The Caterer + Confidentials Liverpool + The Guide Liverpool + LiverpoolWorld + InvestLiverpool + Place North West + Insider Media + Liverpool Business News) for Royal Albert Dock 2026-2028 tenant-mix announcements + new-bar-and-restaurant openings + new-owner repositioning communications; (f) cross-reference Liverpool City Council planning portal for Royal Albert Dock listed-building consent + advertisement consent + scheme estate-management modifications precedent intelligence; (g) bilateral leverage on Edward Pavilion same-cycle Active On-market pursuit (LoopNet 29518408 / Metis Real Estate Advisors) + Mann Island Pier Head L3 1BP (CBRE asset management) + Old Hall Street office-fringe + Castle Street A5040 wider Liverpool L1 / L2 / L3 commercial-quarter / waterfront / cultural-quarter pipeline pre-LOI.</p>
+      </div>
+      <a class='btn-primary' href='https://www.google.com/search?q=L3+4AF+commercial+site%3Ainvestliverpool.com' target='_blank' rel='noopener'>Find L3 4AF on Investliverpool →</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div>UK SITE PIPELINE · QS-20260507-032 · Generated 2026-05-07</div>
+</footer>
+
+</body></html>
